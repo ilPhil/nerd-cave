@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27');
+
+.MessageBar {
+    padding: 15px;
+    margin: 20px 0;
+    background: #262626;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    input {
+        font-family: nunito sans;
+        background: transparent;
+        border: none;
+        width: 90%;
+        color: white;
+    }
+    input:focus {
+        outline: none;
+    }
+    .emoji, .clip {
+        color: white;
+        font-size: 30px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    .emoji:hover, .clip:hover {
+        color: black;
+        background: white;
+        border-radius: 100%;
+        border: none;
+    }
+}

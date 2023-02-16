@@ -3,6 +3,8 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.scss";
 import Hamburger from "@/components/Hamburger/Index";
 import ChatSidebar from "@/components/chatSidebar/Index";
+import TitleBar from "@/components/TitleBar";
+import MessagesList from "@/components/MessagesList/Index";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,8 @@ export default function Home() {
           <ChatSidebar />
         </div>
         <div className={styles.rightSide}>
-          <h1>Welcome</h1>
+          <TitleBar/>
+          <MessagesList/>
         </div>
 
         {/* <Hamburger /> */}
