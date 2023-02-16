@@ -1,0 +1,10 @@
+.topics {
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: white;
+    padding-left: 40px;
+  }
+}

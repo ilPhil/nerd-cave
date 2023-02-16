@@ -5,6 +5,7 @@ import { SiYoutubegaming, SiYoutubemusic } from "react-icons/si";
 import { FaPen, FaBook } from "react-icons/fa";
 import SingleMessageSidebar from "../singleMessageSidebar/Index";
 import { global_chats } from "@/utils/constants";
+import TopicList from "../TopicList/Index";
 
 function ChatSidebar() {
   return (
@@ -26,7 +27,7 @@ function ChatSidebar() {
       </div>
       <hr></hr>
       <div className={styles.topics}>
-        <h3>
+        {/* <h3>
           <span>
             <BsFillPlayCircleFill />
           </span>
@@ -64,6 +65,8 @@ function ChatSidebar() {
             {global_chats[4].name}
           </li>
         </ul>
+      </div> */}
+        <TopicList />
       </div>
       <div className={styles.user}>
         <img
