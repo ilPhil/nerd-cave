@@ -1,4 +1,5 @@
 // import "./style.css";
+import style from "./style.module.scss";
 
 import { BsFillChatDotsFill, BsFilm } from "react-icons/bs";
 import { SiYoutubegaming, SiYoutubemusic } from "react-icons/si";
@@ -6,47 +7,47 @@ import { FaPen, FaBook } from "react-icons/fa";
 
 const Hamburger = () => {
   return (
-    <section class="menu">
-      <div class="hamburger-menu">
-        <input id="menu__toggle" type="checkbox" />
-        <label class="menu__btn" for="menu__toggle">
+    <section className={style.menu}>
+      <div className={style.hamburgerMenu}>
+        <input className={style.menu__toggle} type="checkbox" />
+        <label className={style.menu__btn} htmlFor="menu__toggle">
           <span></span>
         </label>
 
-        <ul class="menu__box">
-          <li>
+        <ul className={style.menu__box}>
+          <li className={style.li__item}>
             <SiYoutubemusic />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Musica
             </a>
           </li>
-          <li>
+          <li className={style.li__item}>
             <BsFilm />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Film/SerieTv
             </a>
           </li>
-          <li>
+          <li className={style.li__item}>
             <SiYoutubegaming />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Gaming
             </a>
           </li>
-          <li>
+          <li className={style.li__item}>
             <FaPen />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Anime/Manga
             </a>
           </li>
-          <li>
+          <li className={style.li__item}>
             <FaBook />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Letteratura
             </a>
           </li>
-          <li>
+          <li className={style.li__item}>
             <BsFillChatDotsFill />
-            <a class="menu__item" href="https://www.google.com">
+            <a className={style.menu__item} href="https://www.google.com">
               Chat
             </a>
           </li>

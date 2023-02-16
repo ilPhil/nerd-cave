@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap");
 
-#menu__toggle {
+.menu__toggle {
   opacity: 0;
 }
 
-#menu__toggle:checked + .menu__btn > span {
+.menu__toggle:checked + .menu__btn > span {
   transform: rotate(45deg);
 }
-#menu__toggle:checked + .menu__btn > span::before {
+.menu__toggle:checked + .menu__btn > span::before {
   top: 0;
   transform: rotate(0deg);
 }
-#menu__toggle:checked + .menu__btn > span::after {
+.menu__toggle:checked + .menu__btn > span::after {
   top: 0;
   transform: rotate(90deg);
 }
-#menu__toggle:checked ~ .menu__box {
+.menu__toggle:checked ~ .menu__box {
   right: 0 !important;
 }
 .menu__btn {
