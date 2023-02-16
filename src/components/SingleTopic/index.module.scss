@@ -1,0 +1,15 @@
+.topicItem {
+  cursor: pointer;
+  transition: all 0.35s;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 1rem;
+  color: white;
+  display: flex;
+  gap: 10px;
+  &:hover {
+    font-weight: bold;
+    span {
+      color: #c86931;
+    }
+  }
+}
