@@ -4,6 +4,7 @@ import { BsFillPlayCircleFill, BsFilm } from "react-icons/bs";
 import { SiYoutubegaming, SiYoutubemusic } from "react-icons/si";
 import { FaPen, FaBook } from "react-icons/fa";
 import SingleMessageSidebar from "../singleMessageSidebar/Index";
+import { global_chats } from "@/utils/constants";
 
 function ChatSidebar() {
   return (
@@ -36,31 +37,31 @@ function ChatSidebar() {
             <span>
               <BsFilm />
             </span>
-            Film / Telefilm
+            {global_chats[0].name}
           </li>
           <li>
             <span>
               <SiYoutubegaming />
             </span>
-            Gaming
+            {global_chats[1].name}
           </li>
           <li>
             <span>
               <SiYoutubemusic />
             </span>
-            Musica
+            {global_chats[2].name}
           </li>
           <li>
             <span>
               <FaPen />
             </span>
-            Manga / Anime
+            {global_chats[3].name}
           </li>
           <li>
             <span>
               <FaBook />
             </span>
-            Letteratura
+            {global_chats[4].name}
           </li>
         </ul>
       </div>
