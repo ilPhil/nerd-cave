@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27');
+
+.Message {
+    color: #cbcaca;
+    border-bottom: 1px solid #ffffff25;
+    display: flex;
+    gap: 10px;
+    padding: 30px;
+    .userImg {
+        border-radius: 100%;
+        border: none;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+    }
+    h3 {
+        font-family: ubuntu, sans-serif;
+        font-size: 1.3rem;
+    }
+    p {
+        font-family: nunito sans, sans-serif;
+    }
+    span {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
