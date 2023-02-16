@@ -4,7 +4,7 @@
     background: transparent;
     filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
     box-shadow: 0 12px 33px -5px #000000;
-    color: white;
+    color: whitesmoke;
     .contain {
         display: flex;
         align-items: center;
@@ -29,9 +29,10 @@
         input {
             font-family: nunito sans;
             background: #262626;
-            color: white;
+            color: whitesmoke;
             border: none;
             padding: 5px;
+            font-family: nunito sans;
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         }
         input:focus {
@@ -40,17 +41,17 @@
     }
     .buttons {
         button {
-            background: #50837E;
+            background: #38b6ff;
             border: none;
             padding: 5px 20px;
             text-align: center;
             margin: 5px;
-            color: white;
+            color: whitesmoke;
             font-family: ubuntu;
             cursor: pointer;
         }
         button:hover {
-            background: #c86931;
+            background: #8c52ff;
         }
     }
 }

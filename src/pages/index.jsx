@@ -5,6 +5,7 @@ import Hamburger from "@/components/Hamburger/Index";
 import ChatSidebar from "@/components/chatSidebar/Index";
 import TitleBar from "@/components/TitleBar";
 import MessagesList from "@/components/MessagesList/Index";
+import SingleMessage from "@/components/SingleMessage/Index";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function Home() {
           <TitleBar/>
           <MessagesList/>
         </div>
-
+        {/* <SingleMessage/> */}
         {/* <Hamburger /> */}
       </main>
     </>
