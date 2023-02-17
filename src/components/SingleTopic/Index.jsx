@@ -4,7 +4,7 @@ function SingleTopic({ data }) {
   return (
     <>
       <li className={styles.topicItem}>
-        <span>o</span>
+        <span>{data.icon}</span>
         {data.name}
       </li>
     </>

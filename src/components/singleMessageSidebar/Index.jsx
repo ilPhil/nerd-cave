@@ -1,10 +1,10 @@
 import styles from "./index.module.scss";
 
-function SingleMessageSidebar() {
+function SingleMessageSidebar({ data }) {
   return (
     <div className={styles.SingleMessageSidebar}>
-      <h3>Jennifer</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing...</p>
+      <h3>{data.name}</h3>
+      <p>{data.text}</p>
     </div>
   );
 }
