@@ -1,11 +1,39 @@
 import styles from "./index.module.scss";
 import { AiFillHome } from "react-icons/ai";
-import { BsFillPlayCircleFill, BsFilm } from "react-icons/bs";
-import { SiYoutubegaming, SiYoutubemusic } from "react-icons/si";
-import { FaPen, FaBook } from "react-icons/fa";
+import { BsFillPlayCircleFill } from "react-icons/bs";
 import SingleMessageSidebar from "../singleMessageSidebar/Index";
-import { global_chats } from "@/utils/constants";
 import TopicList from "../TopicList/Index";
+
+const mockChat = [
+  {
+    avatar: "1.jpg",
+    createdAt: "1-2-3",
+    name: "Nuccio",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue sapien, commodo vitae dignissim id",
+    uid: "1",
+  },
+  {
+    avatar: "2.jpg",
+    createdAt: "1-2-3",
+    name: "Tiziano",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue sapien",
+    uid: "2",
+  },
+  {
+    avatar: "3.jpg",
+    createdAt: "1-2-4",
+    name: "Elisa",
+    text: "Mauris aliquet gravida tempor. Pellentesque pretium nisi lacus, at dignissim tortor bibendum sed. In hac habitasse platea dictumst. Nulla lacus neque, sollicitudin tristique justo vitae, ullamcorper euismod neque. Morbi scelerisque tortor at facilisis rutrum. Sed at feugiat arcu, vel eleifend turpis. Proin egestas placerat nulla blandit aliquam.",
+    uid: "3",
+  },
+  {
+    avatar: "4.jpg",
+    createdAt: "1-2-4",
+    name: "Jennifer",
+    text: "Mauris aliquet gravida tempor. Pellentesque pretium nisi lacus, at dignissim tortor bibendum sed. In hac habitasse platea dictumst.",
+    uid: "3",
+  },
+];
 
 function ChatSidebar() {
   return (
@@ -20,52 +48,12 @@ function ChatSidebar() {
         Ultimi Messaggi:
       </h3>
       <div className={styles.lastMsgs}>
-        <SingleMessageSidebar />
-        <SingleMessageSidebar />
-        <SingleMessageSidebar />
-        <SingleMessageSidebar />
+        {mockChat.map((item) => (
+          <SingleMessageSidebar data={item} key={item.id} />
+        ))}
       </div>
       <hr></hr>
       <div className={styles.topics}>
-        {/* <h3>
-          <span>
-            <BsFillPlayCircleFill />
-          </span>
-          Canali:
-        </h3>
-        <ul>
-          <li>
-            <span>
-              <BsFilm />
-            </span>
-            {global_chats[0].name}
-          </li>
-          <li>
-            <span>
-              <SiYoutubegaming />
-            </span>
-            {global_chats[1].name}
-          </li>
-          <li>
-            <span>
-              <SiYoutubemusic />
-            </span>
-            {global_chats[2].name}
-          </li>
-          <li>
-            <span>
-              <FaPen />
-            </span>
-            {global_chats[3].name}
-          </li>
-          <li>
-            <span>
-              <FaBook />
-            </span>
-            {global_chats[4].name}
-          </li>
-        </ul>
-      </div> */}
         <TopicList />
       </div>
       <div className={styles.user}>
