@@ -69,7 +69,7 @@ const MessagesList = ({ dbname }) => {
           <Message data={item} key={i} />
         ))}
       </div>
-      <MessageBar />
+      <MessageBar dbname={dbname} />
     </div>
   );
 };
