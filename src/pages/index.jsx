@@ -7,12 +7,27 @@ import TitleBar from "@/components/TitleBar";
 import MessagesList from "@/components/MessagesList/Index";
 import SingleMessage from "@/components/SingleMessage/Index";
 import Link from "next/link";
-
-const inter = Inter({ subsets: ["latin"] });
+import Login from "@/components/Login";
+import { auth } from "@/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Start from "@/components/BtnStart";
+import { useState } from "react";
+import { BsTypeH1 } from "react-icons/bs";
 
 export default function Home() {
+  const [user] = useAuthState(auth);
+  const [pressed, setPressed] = useState(false);
+  console.log(user);
   return (
     <>
+      {!user ? (
+        <Login />
+      ) : !pressed ? (
+        <Start setPressed={setPressed} />
+      ) : (
+        <h1>stanza</h1>
+      )}
+      <button onClick={() => auth.signOut()}>sign out</button>
       <ul>
         <li>
           <Link href="/">Home</Link>
