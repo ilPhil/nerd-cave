@@ -23,8 +23,8 @@ export default function Home() {
           <ChatSidebar />
         </div>
         <div className={styles.rightSide}>
-          <TitleBar/>
-          <MessagesList/>
+          <TitleBar />
+          <MessagesList dbname={"messages"} />
         </div>
         {/* <SingleMessage/> */}
         {/* <Hamburger /> */}

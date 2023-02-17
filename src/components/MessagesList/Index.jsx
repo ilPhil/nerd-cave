@@ -43,14 +43,11 @@ const mockMsg = [
   },
 ];
 
-const MessagesList = () => {
+const MessagesList = ({ dbname }) => {
   const [messages, setMessages] = useState([]);
+  //TODO: verificare che il dbname sia in una lista
   useEffect(() => {
-    const q = query(
-      collection(db, "messages"),
-      orderBy("createdAt"),
-      limit(50)
-    );
+    const q = query(collection(db, dbname), orderBy("createdAt"), limit(50));
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let messages = [];
       QuerySnapshot.forEach((doc) => {
