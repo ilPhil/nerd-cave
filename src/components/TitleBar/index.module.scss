@@ -1,58 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27");
 
 .TitleBar {
-    background: transparent;
-    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
-    box-shadow: 0 12px 33px -5px #000000;
-    color: whitesmoke;
-    .contain {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
+  background: transparent;
+  /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
+  box-shadow: 0 12px 33px -5px #000000; */
+  color: whitesmoke;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .contain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+  }
+  .text {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 50vw;
+    margin-bottom: 15px;
+    h2 {
+      font-family: "Russo One", sans-serif;
+      text-transform: capitalize;
+      letter-spacing: 3px;
+      font-size: 2.3rem;
     }
-    .logo {
-        width: 100px;
-        height: 100px;
-        padding: 10px;
+    input {
+      font-family: "Nunito Sans", sans-serif;
+      width: 30%;
+      background: #262626;
+      color: whitesmoke;
+      border: none;
+      padding: 5px 0 5px 10px;
+      font-family: "nunito sans", sans-serif;
+      font-size: 1rem;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-family: "Nunito Sans", sans-serif;
+      }
     }
-    .text {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        width: 50vw;
-        h2 {
-            font-family: russo one, sans-serif;
-            letter-spacing: 3px;
-            font-size: xx-large;
-        }
-        input {
-            font-family: nunito sans;
-            background: #262626;
-            color: whitesmoke;
-            border: none;
-            padding: 5px;
-            font-family: nunito sans;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-        }
-        input:focus {
-            outline: none;
-        }
+  }
+  .buttons {
+    button {
+      background: #38b6ff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      margin: 5px;
+      color: whitesmoke;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.35s;
     }
-    .buttons {
-        button {
-            background: #38b6ff;
-            border: none;
-            padding: 5px 20px;
-            text-align: center;
-            margin: 5px;
-            color: whitesmoke;
-            font-family: ubuntu;
-            cursor: pointer;
-            transition: all 0.35s;
-        }
-        button:hover {
-            background: #8c52ff;
-        }
+    button:hover {
+      background: #8c52ff;
+      font-weight: bold;
     }
+  }
 }

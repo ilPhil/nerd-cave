@@ -26,8 +26,11 @@ const MessageBar = ({ dbname }) => {
     setMessage("");
   };
   return (
-    <div className={styles.MessageBar}>
-      <form onSubmit={(event) => sendMessage(event)}>
+    <div>
+      <form
+        className={styles.MessageBar}
+        onSubmit={(event) => sendMessage(event)}
+      >
         <input
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Scrivi qui..."
