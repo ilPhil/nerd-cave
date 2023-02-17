@@ -5,5 +5,5 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Chat() {
   const [user] = useAuthState(auth);
-  return <>{!user ? <Login /> : <h1>DIOPORCO</h1>}</>;
+  return <>{!user ? <Login /> : <h1>Sei loggato</h1>}</>;
 }
