@@ -2,6 +2,16 @@ import MessageBar from "../MessageBar/Index";
 import Message from "../Message/Index";
 import styles from "./index.module.scss";
 
+import { useEffect, useRef, useState } from "react";
+import {
+  query,
+  collection,
+  orderBy,
+  onSnapshot,
+  limit,
+} from "@firebase/firestore";
+import { db } from "../../firebase";
+
 const mockMsg = [
   {
     avatar: "https://picsum.photos/60/60",
@@ -29,16 +39,36 @@ const mockMsg = [
     createdAt: "1-2-4",
     name: "Jennifer",
     text: "Mauris aliquet gravida tempor. Pellentesque pretium nisi lacus, at dignissim tortor bibendum sed. In hac habitasse platea dictumst.",
-    uid: "3",
+    uid: "4",
   },
 ];
 
 const MessagesList = () => {
+  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const q = query(
+      collection(db, "messages"),
+      orderBy("createdAt"),
+      limit(50)
+    );
+    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+      let messages = [];
+      QuerySnapshot.forEach((doc) => {
+        // console.log("=> ", doc.data());
+        messages.push({ ...doc.data(), id: doc.id });
+      });
+      // console.log(messages);
+      setMessages(messages);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  console.log(messages);
   return (
     <div className={styles.MessagesList}>
       <div className={styles.messages}>
-        {mockMsg.map((item) => (
-          <Message data={item} key={item.id} />
+        {messages.map((item, i) => (
+          <Message data={item} key={i} />
         ))}
       </div>
       <MessageBar />

@@ -31,7 +31,7 @@ const mockChat = [
     createdAt: "1-2-4",
     name: "Jennifer",
     text: "Mauris aliquet gravida tempor. Pellentesque pretium nisi lacus, at dignissim tortor bibendum sed. In hac habitasse platea dictumst.",
-    uid: "3",
+    uid: "4",
   },
 ];
 
@@ -49,7 +49,7 @@ function ChatSidebar() {
       </h3>
       <div className={styles.lastMsgs}>
         {mockChat.map((item) => (
-          <SingleMessageSidebar data={item} key={item.id} />
+          <SingleMessageSidebar data={item} key={item.uid} />
         ))}
       </div>
       <hr></hr>
