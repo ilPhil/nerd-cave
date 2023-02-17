@@ -39,7 +39,7 @@
     align-items: center;
     span {
       font-size: 1.2rem;
-      color: #c86931;
+      color: #8C52FF;
     }
   }
 
@@ -71,7 +71,7 @@
         &:hover {
           font-weight: bold;
           span {
-            color: #c86931;
+            color: #8C52FF;
           }
         }
       }
@@ -94,7 +94,7 @@
     p {
       font-family: "Nunito Sans", sans-serif;
       font-size: 1.2rem;
-      color: #c86931;
+      color: #8C52FF;
     }
     .pc {
       width: 120px;
@@ -124,5 +124,11 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #4a4a4a;
+  }
+}
+
+@media (max-width: 850px) {
+  .ChatSidebar {
+    display: none;
   }
 }

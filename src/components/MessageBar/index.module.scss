@@ -22,10 +22,10 @@
         font-size: 30px;
         margin: 5px;
         cursor: pointer;
+        transition: all 0.35s;
     }
     .emoji:hover, .clip:hover {
-        color: black;
-        background: white;
+        background: #8C52FF;
         border-radius: 100%;
         border: none;
     }
