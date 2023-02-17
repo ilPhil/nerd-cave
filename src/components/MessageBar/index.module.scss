@@ -1,32 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27");
 
 .MessageBar {
-    padding: 15px;
-    margin: 20px 0;
-    background: #262626;
+  padding: 15px;
+  margin: 20px 0;
+  background: #262626;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  input {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    width: 90%;
     color: white;
-    display: flex;
-    justify-content: space-between;
-    input {
-        font-family: nunito sans;
-        background: transparent;
-        border: none;
-        width: 90%;
-        color: white;
+    &:focus {
+      outline: none;
     }
-    input:focus {
-        outline: none;
+    &::placeholder {
+      font-family: "Nunito Sans", sans-serif;
+      font-size: 1rem;
     }
-    .emoji, .clip {
-        color: white;
-        font-size: 30px;
-        margin: 5px;
-        cursor: pointer;
-        transition: all 0.35s;
-    }
-    .emoji:hover, .clip:hover {
-        background: #8C52FF;
-        border-radius: 100%;
-        border: none;
-    }
+  }
+
+  .emoji,
+  .clip {
+    color: white;
+    font-size: 30px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.35s;
+  }
+  .emoji:hover,
+  .clip:hover {
+    background: #8c52ff;
+    border-radius: 100%;
+    border: none;
+  }
 }

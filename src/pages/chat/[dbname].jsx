@@ -1,4 +1,5 @@
-import styles from "@/styles/Home.module.scss";
+/* import styles from "@/styles/Home.module.scss"; */
+import styles from "./index.module.scss";
 import { useRouter } from "next/router";
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";

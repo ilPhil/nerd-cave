@@ -19,7 +19,7 @@ export default function Home() {
   const [pressed, setPressed] = useState(false);
   console.log(user);
   return (
-    <>
+    <secion className={styles.home}>
       {!user ? (
         <Login />
       ) : !pressed ? (
@@ -36,6 +36,6 @@ export default function Home() {
           <Link href="/chat">Chat</Link>
         </li>
       </ul>
-    </>
+    </secion>
   );
 }
