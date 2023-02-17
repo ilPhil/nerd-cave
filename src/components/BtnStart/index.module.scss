@@ -1,0 +1,102 @@
+.Start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .btn {
+    border: 10px solid rgb(53, 53, 55);
+    background-color: rgba(4, 27, 4, 0.518);
+    box-shadow: 0 1px 20px black;
+    border-radius: 4px;
+    cursor: pointer;
+    img:hover {
+      transform: scale(1.2);
+    }
+  }
+  .controls {
+    background-color: rgb(53, 53, 55);
+    box-shadow: 0 1px 20px black;
+    border-radius: 4px;
+    padding: 70px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .dpad {
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
+      .up {
+        border-radius: 4px;
+        width: 35px;
+        height: 40px;
+        z-index: 10;
+        background-color: rgb(19, 19, 19);
+      }
+      .side {
+        display: flex;
+        gap: 40px;
+        .left {
+          border-radius: 4px;
+          width: 40px;
+          height: 35px;
+          background-color: rgb(19, 19, 19);
+        }
+        .right {
+          border-radius: 4px;
+          width: 40px;
+          height: 35px;
+          background-color: rgb(19, 19, 19);
+        }
+      }
+      .down {
+        border-radius: 4px;
+        width: 35px;
+        height: 40px;
+        background-color: rgb(19, 19, 19);
+      }
+    }
+    .ab {
+      width: 100px;
+      height: 100px;
+      filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
+      .btnB {
+        display: flex;
+        justify-content: flex-end;
+        .b {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Ubuntu";
+          font-weight: bold;
+          background-color: rgb(19, 19, 19);
+          color: gray;
+          width: 30px;
+          height: 30px;
+          border: 2px solid rgb(19, 19, 19);
+          padding: 10px;
+          border-radius: 50%;
+        }
+      }
+      .btnA {
+        display: flex;
+        justify-content: center;
+        .a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: "Ubuntu";
+          font-weight: bold;
+          background-color: rgb(19, 19, 19);
+          color: gray;
+          width: 30px;
+          height: 30px;
+          border: 2px solid rgb(19, 19, 19);
+          padding: 10px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
