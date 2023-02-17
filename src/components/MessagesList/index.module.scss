@@ -12,6 +12,7 @@
         gap: 30px;
         max-width: 80vw;
         overflow-y: scroll;
+        transform: rotate(180deg);
     }
     .messages::-webkit-scrollbar {
         width: 12px;
