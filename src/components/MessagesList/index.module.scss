@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  background: #17181F;
   .messages {
     display: flex;
     flex-direction: column;
@@ -15,17 +16,15 @@
     overflow-y: scroll;
     &::-webkit-scrollbar {
       width: 12px;
-      background-color: #1e1e1e;
+      background-color: #17181F;
     }
     &::-webkit-scrollbar-track {
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
       border-radius: 10px;
-      background-color: #1e1e1e;
+      background-color: transparent;
     }
     &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
-      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      background-color: #4a4a4a;
+      border-radius: 12px;
+      background-color: #1F2029;
     }
   }
 }

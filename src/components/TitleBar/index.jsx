@@ -7,12 +7,11 @@ const TitleBar = ({ title }) => {
         <div className={styles.contain}>
           <div className={styles.description}>
             <div className={styles.text}>
-              <h2>{title}</h2>
+              <div className={styles.title}>
+                <img src="" alt="title_logo"></img>
+                <h2>{title}</h2>
+              </div>
               <input placeholder="cerca..."></input>
-            </div>
-            <div className={styles.buttons}>
-              <button>I tuoi film</button>
-              <button>Lista</button>
             </div>
           </div>
         </div>

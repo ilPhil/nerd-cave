@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap');
 
 .TitleBar {
-  background: transparent;
+  background: #17181F;
   /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
   box-shadow: 0 12px 33px -5px #000000; */
   color: whitesmoke;
@@ -20,14 +20,18 @@
     height: 100px;
     padding: 10px;
   }
+  .title {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
   .text {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    width: 50vw;
-    margin-bottom: 15px;
+    width: 80vw;
+    margin: 0 15px;
     h2 {
-      font-family: "Russo One", sans-serif;
+      font-family: "Poppins", sans-serif;
       text-transform: capitalize;
       letter-spacing: 3px;
       font-size: 2.3rem;
@@ -35,12 +39,13 @@
     input {
       font-family: "Nunito Sans", sans-serif;
       width: 30%;
-      background: #262626;
+      background: #17181F;
       color: whitesmoke;
       border: none;
       padding: 5px 0 5px 10px;
       font-family: "nunito sans", sans-serif;
       font-size: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       &:focus {
         outline: none;
@@ -50,22 +55,4 @@
       }
     }
   }
-  .buttons {
-    button {
-      background: #38b6ff;
-      border: none;
-      padding: 10px 20px;
-      text-align: center;
-      margin: 5px;
-      color: whitesmoke;
-      font-family: "Ubuntu", sans-serif;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: all 0.35s;
-    }
-    button:hover {
-      background: #8c52ff;
-      font-weight: bold;
-    }
-  }
-}
+}  
