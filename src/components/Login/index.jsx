@@ -1,7 +1,7 @@
 import style from "./index.module.scss";
 
 import Image from "next/image";
-import logoNC from "./LogoNerdCave.png";
+import logoNC from "../../../public/LogoNerdCave.png";
 
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className={style.Login}>
       <div className={style.logo}>
-        <Image src={logoNC} alt="LogoNerdCave" width={350} height={350} />
+        <Image src={logoNC} alt="LogoNerdCave" draggable="false" width={350} height={350} />
       </div>
       <div className={style.text}>
         <h2>LOGIN</h2>

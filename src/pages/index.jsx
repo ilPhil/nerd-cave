@@ -23,7 +23,7 @@ export default function Home() {
       ) : (
         <h1>stanza</h1>
       )}
-      <div className={styles.menu}>
+      {/* <div className={styles.menu}>
         <button onClick={() => auth.signOut()}>sign out</button>
         <ul>
           <li>
@@ -33,7 +33,7 @@ export default function Home() {
             <Link href="/chat">Chat</Link>
           </li>
         </ul>
-      </div>
+      </div> */}
     </secion>
   );
 }
