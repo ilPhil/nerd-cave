@@ -7,7 +7,7 @@ const Start = ({ setPressed }) => {
   return (
     <div className={style.Start}>
       <button className={style.btn} onClick={() => setPressed(true)}>
-        <Image src={imgStart} width={300} height={300} />
+        <Image src={imgStart} alt="press start" draggable="false" width={300} height={300} />
       </button>
       <div className={style.controls}>
         <div className={style.dpad}>

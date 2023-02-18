@@ -1,10 +1,12 @@
 import styles from "./index.module.scss";
 
+import logo from "../../../public/LogoNerdCave.png";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 
 import SingleMessageSidebar from "../singleMessageSidebar/Index";
 import TopicList from "../TopicList/Index";
+import Image from "next/image";
 
 const mockChat = [
   {
@@ -41,7 +43,7 @@ function ChatSidebar() {
   return (
     <div className={styles.ChatSidebar}>
       <div className={styles.home}>
-        <AiFillHome />
+        <Image src={logo} alt="logo" width={100} height={100}/>
       </div>
       <h3>
         <span>
