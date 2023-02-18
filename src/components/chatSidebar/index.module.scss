@@ -1,54 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 .ChatSidebar {
-  background-color: #262626;
+  background-color: #1f2029;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 30px;
   height: 100vh;
-  box-shadow: 14px 4px 48px -10px rgba(0, 0, 0, 0.25);
-  margin: 0;
 
-  hr {
-    width: 90%;
-    height: 1px;
-    background-color: #ffffff;
-    border: none;
-    margin: 20px 0;
-  }
-
-  .home {
-    font-size: 3rem;
-    cursor: pointer;
-    transition: all 0.35s;
-    color: white;
-    &:hover {
-      font-size: 3.3rem;
-    }
-  }
-  h3 {
-    padding: 0 3%;
-    font-family: "Ubuntu", sans-serif;
+  .title {
+    padding: 0 6%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
     font-size: 1.5rem;
-    color: #b1bebb;
-    display: flex;
-    gap: 6px;
-    align-items: center;
-    span {
-      font-size: 1.2rem;
-      color: #8C52FF;
-    }
+    color: #ecf0f1;
   }
 
   .lastMsgs,
   .topics {
-    margin: 0 3%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
   }
 
   .topics {
@@ -56,22 +26,23 @@
       list-style-type: none;
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      color: white;
+      gap: 15px;
+      color: #ecf0f1;
       padding-left: 40px;
 
       li {
         cursor: pointer;
         transition: all 0.35s;
-        font-family: "Nunito Sans", sans-serif;
-        font-size: 1rem;
-        color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.9rem;
+        color: #ecf0f1;
         display: flex;
         gap: 10px;
         &:hover {
           font-weight: bold;
+          color: #38b6ff;
           span {
-            color: #8C52FF;
+            color: #38b6ff;
           }
         }
       }
@@ -79,7 +50,7 @@
   }
 
   .user {
-    background-color: #1a1a1a;
+    background-color: #282932;
     padding: 10px 3%;
     margin: 0;
     display: flex;
@@ -92,9 +63,22 @@
       border-radius: 100%;
     }
     p {
-      font-family: "Nunito Sans", sans-serif;
-      font-size: 1.2rem;
-      color: #8C52FF;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      color: #ecf0f1;
+    }
+    button {
+      background: none;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #38b6ff;
+      cursor: pointer;
+      transition: all 0.35s;
+      &:hover {
+        font-weight: 500;
+      }
     }
     .pc {
       width: 120px;
@@ -106,24 +90,24 @@
 }
 
 .lastMsgs {
-  height: 300px;
+  height: 322px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-    background-color: #1e1e1e;
+    -webkit-box-shadow: inset 0 0 6px #282932;
+    border-radius: 4px;
+    background-color: #282932;
   }
 
   &::-webkit-scrollbar {
-    width: 12px;
-    background-color: #1e1e1e;
+    width: 6px;
+    background-color: #17181f;
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 4px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #4a4a4a;
+    background-color: #17181f;
   }
 }
 
