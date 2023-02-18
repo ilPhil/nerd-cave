@@ -11,7 +11,7 @@
         align-items: flex-start;
         gap: 30px;
         max-width: 80vw;
-        overflow-y: scroll;
+        overflow-y: hidden;
         transform: rotate(180deg);
     }
     .messages::-webkit-scrollbar {
