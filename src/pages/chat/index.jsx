@@ -1,5 +1,5 @@
-// import styles from "./index.module.scss";
 import Login from "@/components/Login";
+
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 

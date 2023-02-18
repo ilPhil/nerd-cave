@@ -1,7 +1,11 @@
-import React from "react";
-import { BsFillPlayCircleFill } from "react-icons/bs";
-import SingleTopic from "../SingleTopic/Index";
 import styles from "./index.module.scss";
+
+import { BsFillPlayCircleFill } from "react-icons/bs";
+
+import React from "react";
+
+import SingleTopic from "../SingleTopic/Index";
+
 import { global_chats } from "@/utils/constants";
 
 function TopicList() {

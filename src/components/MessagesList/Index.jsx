@@ -1,8 +1,11 @@
-import MessageBar from "../MessageBar/Index";
-import Message from "../Message/Index";
 import styles from "./index.module.scss";
 
 import { useEffect, useRef, useState } from "react";
+
+import MessageBar from "../MessageBar/Index";
+import Message from "../Message/Index";
+
+import { db } from "../../firebase";
 import {
   query,
   collection,
@@ -10,7 +13,6 @@ import {
   onSnapshot,
   limit,
 } from "@firebase/firestore";
-import { db } from "../../firebase";
 
 const MessagesList = ({ dbname }) => {
   const [messages, setMessages] = useState([]);
@@ -22,13 +24,10 @@ const MessagesList = ({ dbname }) => {
     if (messagesEl != null)
       messagesEl.current.scrollBy({
         top: messagesEl.current.scrollHeight,
-        // behavior: "smooth",
       });
   };
 
   useEffect(() => {
-    // if (dbname == undefined) return;
-
     const q = query(collection(db, dbname), orderBy("createdAt"), limit(50));
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let messages = [];

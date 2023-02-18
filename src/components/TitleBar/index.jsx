@@ -5,7 +5,6 @@ const TitleBar = ({ title }) => {
     <div className={styles.TitleBar}>
       <div>
         <div className={styles.contain}>
-          {/* <img className={styles.logo} src="" alt="logo"></img> */}
           <div className={styles.description}>
             <div className={styles.text}>
               <h2>{title}</h2>

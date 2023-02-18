@@ -1,15 +1,12 @@
 import style from "./index.module.scss";
-import logoNC from "./LogoNerdCave.png";
-import Image from "next/image";
 
+import Image from "next/image";
+import logoNC from "./LogoNerdCave.png";
+
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../../firebase";
-import {
-  GoogleAuthProvider,
-  signInWithRedirect,
-  signInWithPopup,
-} from "firebase/auth";
-import { addDoc, collection, getDocs, query, where } from "firebase/firestore";
 
 const Login = () => {
   const [user] = useAuthState(auth);
