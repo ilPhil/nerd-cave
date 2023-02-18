@@ -27,15 +27,17 @@ export default function Home() {
       ) : (
         <h1>stanza</h1>
       )}
-      <button onClick={() => auth.signOut()}>sign out</button>
-      <ul>
-        <li>
-          <Link href="/">Home</Link>
-        </li>
-        <li>
-          <Link href="/chat">Chat</Link>
-        </li>
-      </ul>
+      <div className={styles.menu}>
+        <button onClick={() => auth.signOut()}>sign out</button>
+        <ul>
+          <li>
+            <Link href="/">Home</Link>
+          </li>
+          <li>
+            <Link href="/chat">Chat</Link>
+          </li>
+        </ul>
+      </div>
     </secion>
   );
 }
