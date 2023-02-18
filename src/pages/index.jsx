@@ -17,7 +17,7 @@ import { BsTypeH1 } from "react-icons/bs";
 export default function Home() {
   const [user] = useAuthState(auth);
   const [pressed, setPressed] = useState(false);
-  console.log(user);
+
   return (
     <secion className={styles.home}>
       {!user ? (

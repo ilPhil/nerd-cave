@@ -2,12 +2,12 @@
 
 .Message {
   color: whitesmoke;
-  border-bottom: 1px solid #ffffff25;
+  border-bottom: 1px solid #ffffff13;
   display: flex;
   gap: 10px;
-  padding: 30px;
-  width: 90%;
-  transform: rotate(-180deg);
+  padding: 10px 0;
+  width: 100%;
+
   .userImg {
     border-radius: 100%;
     border: none;
@@ -23,12 +23,15 @@
     justify-content: center;
     gap: 10px;
     h3 {
-      font-family: "Ubuntu", sans-serif;
+      font-family: "Calibri", sans-serif;
       font-size: 1.3rem;
       color: #b1bebb;
     }
     p {
-      font-family: nunito sans, sans-serif;
+      font-family: "Calibri", sans-serif;
+      color: whitesmoke;
+      font-size: 1.1rem;
+      font-weight: 300;
     }
     span {
       display: flex;

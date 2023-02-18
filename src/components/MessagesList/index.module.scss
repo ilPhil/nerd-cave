@@ -1,37 +1,39 @@
 .MessagesList {
-    padding: 0 10%;
-    width: 80vw;
-    height: 80%;
+  border: 1px solid red;
+  padding: 50px 5% 0 5%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  .messages {
+    border: 1px solid yellow;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    .messages {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 30px;
-        max-width: 80vw;
-        overflow-y: hidden;
-        transform: rotate(180deg);
+    align-items: flex-start;
+    gap: 10px;
+    padding: 15px 0;
+    width: 100%;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 12px;
+      background-color: #1e1e1e;
     }
-    .messages::-webkit-scrollbar {
-        width: 12px;
-        background-color: #1e1e1e;
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      background-color: #1e1e1e;
     }
-    .messages::-webkit-scrollbar-track {
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        border-radius: 10px;
-        background-color: #1e1e1e;
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #4a4a4a;
     }
-    .messages::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-        background-color: #4a4a4a;
-    }
+  }
 }
 
 @media (max-width: 850px) {
-    .MessagesList {
-        width: 100vw;
-    }
+  .MessagesList {
+    width: 100vw;
+  }
 }
