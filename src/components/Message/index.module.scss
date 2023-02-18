@@ -1,13 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
 
 .Message {
   color: whitesmoke;
-  border-bottom: 1px solid #ffffff13;
   display: flex;
   gap: 10px;
   padding: 10px 0;
-  width: 100%;
-
+  width: 60%;
   .userImg {
     border-radius: 100%;
     border: none;
@@ -21,17 +19,20 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    width: 100%;
+    background: #1F2029;
+    padding: 15px 25px;
     h3 {
-      font-family: "Calibri", sans-serif;
-      font-size: 1.3rem;
+      font-size: 20px;
       color: #b1bebb;
+      font-family: "Open Sans", sans-serif;
     }
     p {
-      font-family: "Calibri", sans-serif;
       color: whitesmoke;
-      font-size: 1.1rem;
+      font-size: 15px;
       font-weight: 300;
+      font-family: "Open Sans", sans-serif;
     }
     span {
       display: flex;

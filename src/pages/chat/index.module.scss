@@ -1,8 +1,6 @@
 .main {
   height: 100vh;
   display: flex;
-  background-color: black;
-  background-image: url("./room.png");
   background-position: center;
   background-size: cover;
 }
@@ -14,6 +12,5 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background: linear-gradient(180deg, rgba(37, 37, 37, 0.84) 0%, #191919 100%);
 }

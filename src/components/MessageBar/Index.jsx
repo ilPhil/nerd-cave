@@ -34,7 +34,7 @@ const MessageBar = ({ dbname }) => {
       >
         <input
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Scrivi qui..."
+          placeholder="Invia un messaggio..."
           value={message}
         ></input>
         <div className={styles.buttons}>
