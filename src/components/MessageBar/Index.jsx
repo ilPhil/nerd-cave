@@ -1,8 +1,9 @@
+import styles from "./index.module.scss";
 import { BsEmojiWink } from "react-icons/bs";
 import { AiOutlinePaperClip } from "react-icons/ai";
-import styles from "./index.module.scss";
 
 import React, { useState } from "react";
+
 import { auth, db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 

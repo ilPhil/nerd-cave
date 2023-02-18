@@ -7,7 +7,6 @@ const Message = ({ data }) => {
       <div className={styles.text}>
         <span>
           <h3>{data.name}</h3>
-          {/* <p>{data.createdAt}</p> */}
         </span>
         <p>{data.text}</p>
       </div>

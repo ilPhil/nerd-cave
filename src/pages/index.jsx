@@ -1,18 +1,14 @@
-import Head from "next/head";
-import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.scss";
-import Hamburger from "@/components/Hamburger/Index";
-import ChatSidebar from "@/components/chatSidebar/Index";
-import TitleBar from "@/components/TitleBar";
-import MessagesList from "@/components/MessagesList/Index";
-import SingleMessage from "@/components/SingleMessage/Index";
+
+import { useState } from "react";
+
 import Link from "next/link";
+
 import Login from "@/components/Login";
+import Start from "@/components/BtnStart";
+
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Start from "@/components/BtnStart";
-import { useState } from "react";
-import { BsTypeH1 } from "react-icons/bs";
 
 export default function Home() {
   const [user] = useAuthState(auth);

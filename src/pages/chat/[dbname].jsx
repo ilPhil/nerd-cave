@@ -1,16 +1,15 @@
-/* import styles from "@/styles/Home.module.scss"; */
 import styles from "./index.module.scss";
-import { useRouter } from "next/router";
-import { auth } from "@/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 
+import { useRouter } from "next/router";
 import Head from "next/head";
-import Hamburger from "@/components/Hamburger/Index";
+
 import ChatSidebar from "@/components/chatSidebar/Index";
 import TitleBar from "@/components/TitleBar";
 import MessagesList from "@/components/MessagesList/Index";
-import SingleMessage from "@/components/SingleMessage/Index";
 import Login from "@/components/Login";
+
+import { auth } from "@/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function () {
   const router = useRouter();

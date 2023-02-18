@@ -1,5 +1,6 @@
 import style from "./index.module.scss";
 import imgStart from "./start.png";
+
 import Image from "next/image";
 
 const Start = ({ setPressed }) => {

@@ -1,4 +1,3 @@
-// import "./style.css";
 import style from "./style.module.scss";
 
 import { BsFillChatDotsFill, BsFilm } from "react-icons/bs";
