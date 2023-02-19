@@ -89,6 +89,7 @@ function ChatSidebar() {
           );
           const otherUser = await getUserById(otherUserId[0]);
           const lastMessage = await getLastMessage(doc.id);
+          if (lastMessage === null) return;
           setLastPrivateMessages((prev) => {
             return [
               ...prev,
