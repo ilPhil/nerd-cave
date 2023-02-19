@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@splinetool/react-spline": "^2.2.5",
+    "@splinetool/runtime": "^0.9.220",
     "firebase": "^9.17.1",
     "next": "13.1.6",
     "react": "18.2.0",
