@@ -87,17 +87,6 @@ function ChatSidebar() {
         <TopicList />
       </div>
       <UserSection />
-      {/* <div className={styles.user}>
-        <img
-          className={styles.userImg}
-          src="https://picsum.photos/60/60"
-          alt="user"
-        />
-        <div className={styles.userText}>
-          <p>Nome Utente</p>
-          <button>Logout</button>
-        </div>
-      </div> */}
     </div>
   );
 }
