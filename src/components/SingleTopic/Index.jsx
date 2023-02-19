@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./index.module.scss";
 
 function SingleTopic({ data }) {
@@ -5,7 +6,7 @@ function SingleTopic({ data }) {
     <>
       <li className={styles.topicItem}>
         <span>{data.icon}</span>
-        {data.name}
+        <Link href={data.route}>{data.name}</Link>
       </li>
     </>
   );
