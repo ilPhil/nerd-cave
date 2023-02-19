@@ -1,0 +1,38 @@
+.user {
+  background-color: #282932;
+  padding: 10px 3%;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+
+  .userImg {
+    width: 60;
+    border-radius: 100%;
+  }
+  p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    color: #ecf0f1;
+  }
+  button {
+    background: none;
+    border: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #38b6ff;
+    cursor: pointer;
+    transition: all 0.35s;
+    &:hover {
+      font-weight: 500;
+    }
+  }
+  .pc {
+    width: 120px;
+    position: absolute;
+    bottom: 10px;
+    right: -40px;
+  }
+}
