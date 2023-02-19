@@ -6,12 +6,14 @@
   height: 30px;
   width: 60px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 101;
   &:checked {
     + {
       .menu__btn {
+        z-index: 100;
         > span {
           transform: rotate(45deg);
+
           &::before {
             top: 0;
             transform: rotate(0deg);
@@ -68,6 +70,7 @@
   }
 }
 .menu__box {
+  z-index: 10;
   display: block;
   position: fixed;
   top: 0;

@@ -1,4 +1,4 @@
-.home {
+/* .home {
   background: linear-gradient(180deg, rgba(23, 23, 23, 0.84) 0%, #191919 100%);
   height: 100vh;
   display: block;
@@ -42,7 +42,7 @@
     }
   }
 }
-
+ */
 /* .main {
   height: 100vh;
   display: flex;
@@ -57,3 +57,116 @@
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(37, 37, 37, 0.84) 0%, #191919 100%);
 } */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+.Wrapper {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #1c1035 0%, #191919 100%);
+  overflow: hidden;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .text {
+    z-index: 1;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    .helloUser {
+      font-size: 1.5rem;
+      span {
+        animation: flicker 1.5s infinite alternate;
+      }
+    }
+    h2 {
+      font-family: "Open Sans", sans-serif;
+      font-size: 3.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-family: "Poppins", sans-serif;
+      padding: 0;
+      margin: 0;
+      font-size: 4rem;
+      font-weight: 500;
+      color: #fff;
+      animation: flicker 1.5s infinite alternate;
+
+      /* Flickering animation */
+      @keyframes flicker {
+        0%,
+        18%,
+        22%,
+        25%,
+        53%,
+        57%,
+        100% {
+          text-shadow: 0 0 4px #fff, 0 0 11px #8c52ff, 0 0 19px #fff,
+            0 0 40px #38b6ff, 0 0 80px #8c52ff, 0 0 90px #38b6ff,
+            0 0 100px #8c52ff, 0 0 150px #38b6ff;
+        }
+
+        20%,
+        24%,
+        55% {
+          text-shadow: none;
+        }
+      }
+    }
+    p {
+      font-family: "Open Sans", sans-serif;
+      max-width: 500px;
+      font-weight: 300;
+    }
+    .btns {
+      margin-top: 20px;
+      button {
+        padding: 20px 30px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        background-color: #38b6ff;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        transition: all 0.3s;
+        &:hover {
+          font-weight: bold;
+          color: white;
+        }
+        a {
+          text-decoration: none;
+          font-family: "Open Sans", sans-serif;
+          color: white;
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  .scene {
+    height: 100%;
+    width: 75%;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .Wrapper {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    .scene {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      padding: 0 2%;
+    }
+  }
+}
