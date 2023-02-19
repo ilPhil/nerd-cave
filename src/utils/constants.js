@@ -5,27 +5,27 @@ import { FaPen, FaBook } from "react-icons/fa";
 export const global_chats = [
   {
     name: "Film/Telefilm",
-    route: "/",
+    route: "/film-telefilm",
     icon: <BsFilm />,
   },
   {
     name: "Gaming",
-    route: "/",
+    route: "/gaming",
     icon: <SiYoutubegaming />,
   },
   {
     name: "Musica",
-    route: "/",
+    route: "/musica",
     icon: <SiYoutubemusic />,
   },
   {
     name: "Manga/Anime",
-    route: "/",
+    route: "/manga-anime",
     icon: <FaPen />,
   },
   {
     name: "Letteratura",
-    route: "/",
+    route: "/letteratura",
     icon: <FaBook />,
   },
 ];
