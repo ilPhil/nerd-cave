@@ -37,7 +37,7 @@ const MessagesList = ({ dbname }) => {
       setMessages(messages);
     });
     return () => unsubscribe();
-  }, []);
+  }, [dbname]);
 
   useEffect(() => {
     scrollDown();
