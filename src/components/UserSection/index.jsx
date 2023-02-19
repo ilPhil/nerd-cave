@@ -10,7 +10,7 @@ export const UserSection = () => {
       <img className={styles.userImg} src={user.photoURL} alt="user" />
       <div className={styles.userText}>
         <p>{user.displayName}</p>
-        <button ocClick={() => auth.signOut()}>Logout</button>
+        <button onClick={() => auth.signOut()}>Logout</button>
       </div>
     </div>
   );
