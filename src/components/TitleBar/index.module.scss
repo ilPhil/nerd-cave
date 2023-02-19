@@ -1,35 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap%27");
 
 .TitleBar {
-  background: #17181F;
+  background: #17181f;
+  padding: 7px;
   /* filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
   box-shadow: 0 12px 33px -5px #000000; */
   color: whitesmoke;
-  height: 150px;
+  height: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   .contain {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
   }
-  .logo {
-    width: 100px;
-    height: 100px;
-    padding: 10px;
-  }
-  .title {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
+
   .text {
     display: flex;
     justify-content: space-between;
     width: 80vw;
     margin: 0 15px;
+    .title {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+
+      img {
+        transition: 0.9s;
+        &:hover {
+          transform: scale(1.2) rotateY(360deg) rotateZ(-30deg);
+        }
+      }
+    }
+    span {
+      display: none;
+    }
     h2 {
       font-family: "Poppins", sans-serif;
       text-transform: capitalize;
@@ -37,16 +45,15 @@
       font-size: 2.3rem;
     }
     input {
-      font-family: "Nunito Sans", sans-serif;
+      font-family: "Poppins", sans-serif;
       width: 30%;
-      background: #17181F;
+      height: 40px;
+      background: #17181f;
       color: whitesmoke;
       border: none;
-      padding: 5px 0 5px 10px;
-      font-family: "nunito sans", sans-serif;
+      padding: 10px 5px 5px 10px;
       font-size: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      filter: drop-shadow(0px 4px 4px rgba(255, 255, 255, 0.115));
       &:focus {
         outline: none;
       }
@@ -55,4 +62,25 @@
       }
     }
   }
-}  
+}
+
+@media screen and (max-width: 767px) {
+  .TitleBar {
+    height: 10%;
+    .text {
+      .title {
+        gap: 15px;
+        h2 {
+          font-size: 1.4rem;
+        }
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+}

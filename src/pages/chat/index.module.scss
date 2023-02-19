@@ -5,12 +5,13 @@
   background-size: cover;
 }
 .leftSide {
-  width: 15%;
+  width: 20%;
+  background-color: #1f2029;
 }
 
 .rightSide {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(37, 37, 37, 0.84) 0%, #191919 100%);
+  background-color: #17181f;
 }

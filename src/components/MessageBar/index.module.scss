@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Russo+One&family=Ubuntu&display=swap%27");
 
 .MessageBar {
-  background: #1F2029;
+  background: #1f2029;
   box-shadow: 14px 4px 48px -10px rgba(0, 0, 0, 0.25);
   padding: 5px;
-  margin: 20px 0;
+  margin: 10px 0;
   background: #262626;
   color: white;
   display: flex;
@@ -25,18 +25,22 @@
     }
   }
 
-  .emoji,
-  .clip {
-    color: white;
-    font-size: 30px;
-    margin: 5px;
-    cursor: pointer;
-    transition: all 0.35s;
-  }
-  .emoji:hover,
-  .clip:hover {
-    background: #8c52ff;
-    border-radius: 100%;
-    border: none;
+  .buttons {
+    display: flex;
+    gap: 0.2rem;
+    .emoji,
+    .clip {
+      color: white;
+      font-size: 30px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.35s;
+    }
+    .emoji:hover,
+    .clip:hover {
+      background: #8c52ff;
+      border-radius: 100%;
+      border: none;
+    }
   }
 }
