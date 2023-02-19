@@ -6,10 +6,12 @@
   color: white;
   display: flex;
   gap: 10px;
-  &:hover {
-    font-weight: bold;
-    span {
-      color: #8C52FF;
+  a {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      font-weight: bold;
+      color: #8c52ff;
     }
   }
 }

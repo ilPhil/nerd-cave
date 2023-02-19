@@ -5,8 +5,9 @@ function SingleTopic({ data }) {
   return (
     <>
       <li className={styles.topicItem}>
-        <span>{data.icon}</span>
-        <Link href={data.route}>{data.name}</Link>
+        <Link href={data.route}>
+          {data.icon} {data.name}
+        </Link>
       </li>
     </>
   );
