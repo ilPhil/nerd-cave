@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap%27");
+
+.Error {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ecf0f1;
+  font-family: "Poppins";
+
+  .text {
+    width: 80%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    .vibrate {
+      letter-spacing: 0.1rem;
+      cursor: default;
+      &:hover {
+        -webkit-animation: vibrate 0.3s linear infinite alternate both;
+        animation: vibrate 0.3s linear infinite alternate both;
+        @-webkit-keyframes vibrate {
+          0% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+          }
+          20% {
+            -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+          }
+          40% {
+            -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+          }
+          60% {
+            -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+          }
+          80% {
+            -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+          }
+          100% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+          }
+        }
+        @keyframes vibrate {
+          0% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+          }
+          20% {
+            -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+          }
+          40% {
+            -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+          }
+          60% {
+            -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+          }
+          80% {
+            -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+          }
+          100% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+          }
+        }
+      }
+    }
+    .writer {
+      width: 390px;
+      p {
+        overflow: hidden; /* p non mostrato prima dell'animation */
+        border-right: 0.2em solid #38b6ff; /* typwriter cursor */
+        white-space: nowrap; /* single line */
+        margin: 0 auto;
+        letter-spacing: 0.13em;
+        animation: typing 4.5s steps(40, end),
+          blink-caret 0.7s step-end infinite;
+
+        /* The typing effect */
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+          from,
+          to {
+            border-color: transparent;
+          }
+          50% {
+            border-color: #38b6ff;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          &:hover {
+            transition: 0.25s;
+            color: #38b6ff;
+            border-top: 1px solid #38b6ff;
+            border-bottom: 1px solid #38b6ff;
+          }
+          &:active {
+            color: #38b6ff;
+          }
+          &:visited {
+            color: #ecf0f1;
+          }
+        }
+      }
+    }
+  }
+}
