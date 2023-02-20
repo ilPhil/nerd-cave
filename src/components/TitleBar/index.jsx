@@ -3,6 +3,7 @@ import Image from "next/image";
 //import imagesChat from "@/../public/images";
 import imgMessages from "@/../public/messages.png";
 import Hamburger from "../Hamburger/Index";
+import SearchUser from "../SearchUser";
 
 const TitleBar = ({ title }) => {
   return (
@@ -23,7 +24,10 @@ const TitleBar = ({ title }) => {
                 />
                 <h2>{title}</h2>
               </div>
-              <input placeholder="cerca..."></input>
+              <SearchUser />
+              <span>
+                <Hamburger />
+              </span>
             </div>
           </div>
         </div>
