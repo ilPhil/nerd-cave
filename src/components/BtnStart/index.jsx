@@ -5,7 +5,8 @@ import Image from "next/image";
 
 const Start = ({ setPressed }) => {
   return (
-    <div className={style.Start}>
+    <div className={style.wrapper}>
+     <div className={style.Start}>
       <button className={style.btn} onClick={() => setPressed(true)}>
         <Image
           src={imgStart}
@@ -33,6 +34,7 @@ const Start = ({ setPressed }) => {
           </div>
         </div>
       </div>
+     </div>
     </div>
   );
 };

@@ -33,7 +33,8 @@ const Login = () => {
     auth.signOut();
   };
   return (
-    <div className={style.Login}>
+    <div className={style.wrapper}>
+     <div className={style.Login}>
       <div className={style.logo}>
         <Image src={logoNC} alt="LogoNerdCave" draggable="false" width={350} height={350} />
       </div>
@@ -45,7 +46,8 @@ const Login = () => {
           Sign up with Google
         </button>
       </div>
-    </div>
+     </div>
+    </div> 
   );
 };
 
