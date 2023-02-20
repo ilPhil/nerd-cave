@@ -1,22 +1,20 @@
 import styles from "@/styles/Home.module.scss";
 
 import { useState } from "react";
+import { auth } from "@/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 import Link from "next/link";
 
 import Login from "@/components/Login";
 import Start from "@/components/BtnStart";
 import Head from "next/head";
-
-import { auth } from "@/firebase";
-import { useAuthState } from "react-firebase-hooks/auth";
 import Hamburger from "@/components/Hamburger/Index";
 import Scene from "@/components/spline";
 
 export default function Home() {
   const [user] = useAuthState(auth);
   const [pressed, setPressed] = useState(false);
-
   return (
     <secion className={styles.home}>
       {!user ? (
@@ -39,7 +37,7 @@ export default function Home() {
             <div className={styles.Wrapper}>
               <div className={styles.text}>
                 <p className={styles.helloUser}>
-                  Hello, <span>Nome Utente</span>
+                  Hello, <span> {user.displayName}</span>
                 </p>
                 <h2>Welcome to the</h2>
                 <h1>Nerd Cave</h1>
@@ -61,7 +59,6 @@ export default function Home() {
                 </div>
               </div>
               <Scene />
-              {/* <div className={styles.scene}></div> */}
             </div>
           </main>
         </>
