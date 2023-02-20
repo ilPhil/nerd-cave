@@ -4,7 +4,19 @@
   color: whitesmoke;
   display: flex;
   gap: 10px;
-  width: 80%;
+  width: 100%;
+  &.user {
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    padding: 5px;
+    .text {
+      background-color: #554671;
+      border-radius: 10px 0 10px 10px;
+    }
+  }
+  &.prova {
+    background-color: transparent;
+  }
   .userImg {
     border-radius: 100%;
     border: none;
@@ -20,7 +32,7 @@
     align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
-    width: 60%;
+    width: 40%;
     background: #1f2029;
     padding: 8px 15px;
     h3 {
@@ -32,12 +44,21 @@
     .paragraphAndTime {
       width: 100%;
       display: flex;
+      gap: 20px;
+      align-items: flex-end;
       justify-content: space-between;
-      p {
+
+      .contentMessage {
         color: whitesmoke;
         font-size: 0.9rem;
         font-weight: 300;
         font-family: "Open Sans", sans-serif;
+        /* trim della riga del messaggio */
+        //white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
       }
       .time {
         color: rgb(179, 179, 179);
@@ -50,6 +71,14 @@
       display: flex;
       gap: 10px;
       align-items: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Message {
+    .text {
+      width: 65%;
     }
   }
 }

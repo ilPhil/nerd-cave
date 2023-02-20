@@ -22,35 +22,40 @@
     color: #ecf0f1;
   }
 
-  .lastMsgs,
-  .topics {
-    display: flex;
-    flex-direction: column;
+  .lastMsgs {
+    justify-content: flex-start;
+    gap: 9px;
   }
-
-  .topics {
-    ul {
-      list-style-type: none;
+  .topicnUser {
+    .topics {
       display: flex;
       flex-direction: column;
-      gap: 15px;
-      color: #ecf0f1;
-      padding-left: 40px;
-      padding-bottom: 20px;
+    }
 
-      li {
-        cursor: pointer;
-        transition: all 0.35s;
-        font-family: "Open Sans", sans-serif;
-        font-size: 0.9rem;
-        color: #ecf0f1;
+    .topics {
+      ul {
+        list-style-type: none;
         display: flex;
-        gap: 10px;
-        &:hover {
-          font-weight: bold;
-          color: #38b6ff;
-          span {
+        flex-direction: column;
+        gap: 15px;
+        color: #ecf0f1;
+        padding-left: 40px;
+        padding-bottom: 20px;
+
+        li {
+          cursor: pointer;
+          transition: all 0.35s;
+          font-family: "Open Sans", sans-serif;
+          font-size: 0.9rem;
+          color: #ecf0f1;
+          display: flex;
+          gap: 10px;
+          &:hover {
+            font-weight: bold;
             color: #38b6ff;
+            span {
+              color: #38b6ff;
+            }
           }
         }
       }

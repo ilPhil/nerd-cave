@@ -91,10 +91,14 @@ function ChatSidebar() {
           <SingleMessageSidebar data={item} key={i} />
         ))}
       </div>
-      <div className={styles.topics}>
-        <TopicList />
+      <div className={styles.topicnUser}>
+        <div className={styles.topics}>
+          <TopicList />
+        </div>
+        <div className={styles.userS}>
+          <UserSection />
+        </div>
       </div>
-      <UserSection />
     </div>
   );
 }

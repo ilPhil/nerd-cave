@@ -1,11 +1,12 @@
 .MessagesList {
   padding: 15px 5% 0 5%;
-  height: 90%;
+  height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
   background: #17181f;
+
   .messages {
     display: flex;
     flex-direction: column;
@@ -14,6 +15,10 @@
     padding: 15px 0;
     width: 100%;
     overflow-y: scroll;
+    background-image: url("@/../../../../public/patterndiagonale.png");
+    background-repeat: repeat;
+    background-size: 15rem;
+
     &::-webkit-scrollbar {
       width: 12px;
       background-color: #17181f;

@@ -27,16 +27,14 @@
   .buttons {
     display: flex;
     gap: 0.2rem;
-    .emoji,
-    .clip {
+    .emoji {
       color: white;
       font-size: 30px;
       margin: 5px;
       cursor: pointer;
       transition: all 0.35s;
     }
-    .emoji:hover,
-    .clip:hover {
+    .emoji:hover {
       background: #8c52ff;
       border-radius: 100%;
       border: none;

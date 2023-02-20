@@ -5,35 +5,33 @@
   display: flex;
   gap: 20px;
   align-items: center;
-  position: relative;
 
   .userImg {
     width: 50px;
     height: 50px;
     border-radius: 100%;
   }
-  p {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    color: #ecf0f1;
-  }
-  button {
-    background: none;
-    border: none;
-    font-family: "Open Sans", sans-serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: #38b6ff;
-    cursor: pointer;
-    transition: all 0.35s;
-    &:hover {
-      font-weight: 500;
+  .userText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    p {
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      color: #ecf0f1;
     }
-  }
-  .pc {
-    width: 120px;
-    position: absolute;
-    bottom: 10px;
-    right: -40px;
+    button {
+      background: none;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: #38b6ff;
+      cursor: pointer;
+      transition: all 0.35s;
+      &:hover {
+        font-weight: 500;
+      }
+    }
   }
 }
