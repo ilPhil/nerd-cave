@@ -32,7 +32,8 @@
     align-items: flex-start;
     justify-content: center;
     gap: 0.5rem;
-    width: 40%;
+    width: fit-content;
+    max-width: 70%;
     background: #1f2029;
     padding: 8px 15px;
     h3 {
@@ -78,7 +79,7 @@
 @media screen and (max-width: 767px) {
   .Message {
     .text {
-      width: 65%;
+      max-width: 75%;
     }
   }
 }
