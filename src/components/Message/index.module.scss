@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap%27");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700&display=swap%27");
 
 .Message {
   color: whitesmoke;
   display: flex;
   gap: 10px;
-  padding: 10px 0;
-  width: 90%;
+  width: 80%;
   .userImg {
     border-radius: 100%;
     border: none;
@@ -15,6 +14,7 @@
     box-shadow: 4px 6px 9px 3px rgba(0, 0, 0, 0.25);
   }
   .text {
+    border-radius: 0 10px 10px 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -24,15 +24,27 @@
     background: #1f2029;
     padding: 8px 15px;
     h3 {
-      font-size: 1rem;
-      color: #b1bebb;
-      font-family: "Poppins", sans-serif;
-    }
-    p {
-      color: whitesmoke;
       font-size: 0.9rem;
-      font-weight: 300;
+      color: whitesmoke;
       font-family: "Poppins", sans-serif;
+      font-weight: 800;
+    }
+    .paragraphAndTime {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      p {
+        color: whitesmoke;
+        font-size: 0.9rem;
+        font-weight: 300;
+        font-family: "Open Sans", sans-serif;
+      }
+      .time {
+        color: rgb(179, 179, 179);
+        font-size: 0.8rem;
+        font-weight: 300;
+        font-family: "Open Sans", sans-serif;
+      }
     }
     span {
       display: flex;
