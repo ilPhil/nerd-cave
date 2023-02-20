@@ -1,15 +1,24 @@
 import styles from "./index.module.scss";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "@/firebase";
 
 const Message = ({ data }) => {
+  const [user] = useAuthState(auth);
   return (
-    <div className={styles.Message}>
+    <div
+      className={`${
+        user.uid === data.uid
+          ? `${styles.Message} ${styles.user}`
+          : `${styles.Message} ${styles.prova}`
+      }`}
+    >
       <img className={styles.userImg} src={data.avatar + ""} alt={data.name} />
       <div className={styles.text}>
         <span>
-          <h3>{data.name}</h3>
+          <h3>{user.uid === data.uid ? "Tu" : data.name}</h3>
         </span>
         <div className={styles.paragraphAndTime}>
-          <p>{data.text}</p>
+          <p className={styles.contentMessage}>{data.text}</p>
           <p className={styles.time}>{convertTimeStamp(data?.createdAt)}</p>
         </div>
       </div>

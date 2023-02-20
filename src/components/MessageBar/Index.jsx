@@ -1,6 +1,5 @@
 import styles from "./index.module.scss";
 import { BsEmojiWink } from "react-icons/bs";
-import { AiOutlinePaperClip } from "react-icons/ai";
 
 import React, { useState } from "react";
 
@@ -39,7 +38,6 @@ const MessageBar = ({ dbname }) => {
         ></input>
         <div className={styles.buttons}>
           <BsEmojiWink className={styles.emoji} />
-          <AiOutlinePaperClip className={styles.clip} />
         </div>
       </form>
     </div>

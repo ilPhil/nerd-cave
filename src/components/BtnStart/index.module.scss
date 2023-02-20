@@ -10,7 +10,7 @@
     border-radius: 4px;
     cursor: pointer;
     img:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
   .controls {
@@ -26,28 +26,33 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
+      background-color: rgb(53, 53, 55);
+      // filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
       .up {
         border-radius: 4px;
         width: 35px;
         height: 40px;
         z-index: 10;
         background-color: rgb(19, 19, 19);
+        filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
       }
       .side {
         display: flex;
         gap: 40px;
+        background-color: rgb(53, 53, 55);
         .left {
           border-radius: 4px;
           width: 40px;
           height: 35px;
           background-color: rgb(19, 19, 19);
+          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
         }
         .right {
           border-radius: 4px;
           width: 40px;
           height: 35px;
           background-color: rgb(19, 19, 19);
+          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
         }
       }
       .down {
@@ -55,15 +60,19 @@
         width: 35px;
         height: 40px;
         background-color: rgb(19, 19, 19);
+        filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
       }
     }
     .ab {
       width: 100px;
       height: 100px;
-      filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
+      background-color: rgb(53, 53, 55);
+
       .btnB {
         display: flex;
         justify-content: flex-end;
+        background-color: rgb(53, 53, 55);
+
         .b {
           display: flex;
           justify-content: center;
@@ -77,11 +86,13 @@
           border: 2px solid rgb(19, 19, 19);
           padding: 10px;
           border-radius: 50%;
+          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
         }
       }
       .btnA {
         display: flex;
         justify-content: center;
+        background-color: rgb(53, 53, 55);
         .a {
           display: flex;
           justify-content: center;
@@ -95,6 +106,7 @@
           border: 2px solid rgb(19, 19, 19);
           padding: 10px;
           border-radius: 50%;
+          filter: drop-shadow(1px 1px 10px rgba(0, 0, 0, 0.422));
         }
       }
     }
