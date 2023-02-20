@@ -35,7 +35,7 @@ function ChatSidebar() {
           );
           const q = query(collection(db, `privateMessages/${doc.id}/messages`));
           const unsubscribe = onSnapshot(q, async (QuerySnapshot) => {
-            setLastPrivateMessages([]);
+            // setLastPrivateMessages([]);
             setSomethingHappens(QuerySnapshot);
           });
         }
@@ -51,23 +51,31 @@ function ChatSidebar() {
       const privateChatNodesDocuments = await getDocs(
         collection(db, "privateMessages")
       );
-      privateChatNodesDocuments.forEach(async (doc) => {
-        const idSpllited = doc.id.split("-");
-        if (idSpllited.includes(auth.currentUser.uid)) {
-          const otherUserId = idSpllited.filter(
-            (element) => element != auth.currentUser.uid
-          );
-          const otherUser = await getUserById(otherUserId[0]);
-          const lastMessage = await getLastMessage(doc.id);
-          if (lastMessage === null) return;
-          setLastPrivateMessages((prev) => {
-            return [
-              ...prev,
+      let temp = [];
+      let allMex = [];
+      privateChatNodesDocuments.forEach((doc) => {
+        temp = [...temp, doc];
+      });
+      await Promise.all(
+        temp.map(async (doc) => {
+          const idSpllited = doc.id.split("-");
+          if (idSpllited.includes(auth.currentUser.uid)) {
+            const otherUserId = idSpllited.filter(
+              (element) => element != auth.currentUser.uid
+            );
+            const otherUser = await getUserById(otherUserId[0]);
+            const lastMessage = await getLastMessage(doc.id);
+            if (lastMessage === null) return;
+            allMex = [
+              ...allMex,
               { otherUser: otherUser, lastMessage: lastMessage },
             ];
-          });
-        }
-      });
+          }
+          return allMex;
+        })
+      );
+      setLastPrivateMessages([]);
+      setLastPrivateMessages(allMex);
     };
     fetchData();
   }, [somethingHappens]);
