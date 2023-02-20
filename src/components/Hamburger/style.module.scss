@@ -80,7 +80,7 @@
   margin: 0;
   padding: 80px 20px;
   list-style: none;
-  background-color: #1e1e1e;
+  background-color: #1f2029;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   transition-duration: 0.35s;
 }
@@ -92,20 +92,20 @@
   transition-duration: 0.35s;
   cursor: pointer;
   &:hover {
-    background-color: #171717;
+    background-color: #17181f;
     color: whitesmoke;
   }
   svg {
-    color: #a1a1a1;
+    color: whitesmoke;
     font-size: 20px;
   }
 }
 .menu__item {
   display: block;
   padding: 12px 24px;
-  color: #a1a1a1;
-  font-family: "Nunito sans", sans-serif;
-  font-size: 20px;
+  color: whitesmoke;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
 }
