@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&family=Poppins&display=swap');
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    animation: fadeIn 1s;
+  
+ .Modal {
+    z-index: 100;
+    background: #1F2029;
+    padding: 20px;
+    border-radius: 10px;
+    width: 40%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 1s;
+    position: fixed;
+    top: 200px;
+    left: 450px;
+    @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    img {
+        border-radius: 100%;
+        border: none;
+        width: 50px;
+        height: 50px;
+    }
+    input {
+        width: 70%;
+        padding: 10px;
+        margin: 20px;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+        background: #1F2029;
+        color: whitesmoke;
+        font-family: "Open Sans", sans-serif;
+        &:focus {
+            outline: none;
+        }
+    }
+    .utentList {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 80%;
+        padding: 20px;
+        .utent {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+            padding-bottom: 5px;
+            font-size: 1rem;
+        }
+    }
+}}
