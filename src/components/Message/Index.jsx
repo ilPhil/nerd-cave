@@ -8,10 +8,21 @@ const Message = ({ data }) => {
         <span>
           <h3>{data.name}</h3>
         </span>
-        <p>{data.text}</p>
+        <div className={styles.paragraphAndTime}>
+          <p>{data.text}</p>
+          <p className={styles.time}>{convertTimeStamp(data?.createdAt)}</p>
+        </div>
       </div>
     </div>
   );
+};
+
+const convertTimeStamp = (timestamp) => {
+  const date = new Date(timestamp?.seconds * 1000);
+  return date.toLocaleTimeString(navigator.language, {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 };
 
 export default Message;

@@ -3,7 +3,7 @@
 .SingleMessageSidebar {
   display: flex;
   gap: 10px;
-  padding: 15px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.35s;
   color: white;
@@ -16,28 +16,26 @@
   }
   img {
     border-radius: 100%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: cover;
   }
   .text {
     width: 100%;
     overflow: hidden;
     .nameTime {
-      width: 100%; //
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       h3 {
         font-family: "Poppins", sans-serif;
         transition: all 0.2s;
-        font-size: 1.2rem;
-        white-space: nowrap; //
-        overflow: hidden; //
-        text-overflow: ellipsis; //
+        font-size: 1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       p {
-        width: 100%; //
         font-size: 0.8rem;
         font-weight: 300;
         color: whitesmoke;
