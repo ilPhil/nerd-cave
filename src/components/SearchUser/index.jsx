@@ -13,6 +13,7 @@ import {
 import { auth, db } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
+import styles from "./index.module.scss";
 
 const SearchUser = () => {
   const [userToSearch, setUserToSearch] = useState("");
@@ -72,7 +73,7 @@ const SearchUser = () => {
   };
 
   return (
-    <div>
+    <div className={styles.Modal}>
       <form onSubmit={onSearchSubmit}>
         <input onChange={(e) => setUserToSearch(e.target.value)}></input>
         <input type="submit" value="Cerca" />

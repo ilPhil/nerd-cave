@@ -7,7 +7,11 @@ function SingleMessageSidebar({ data, node, setNode }) {
   const [user] = useAuthState(auth);
 
   return (
-    <Link href={"/chat/private/"} onClick={() => setNode(data)}>
+    <Link
+      href={"/chat/private/"}
+      onClick={() => setNode(data)}
+      className={styles.link}
+    >
       <div
         className={styles.SingleMessageSidebar}
         onClick={() => console.log(data.node)}

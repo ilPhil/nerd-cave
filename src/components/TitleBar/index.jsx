@@ -1,11 +1,16 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-
+import { FiSearch } from "react-icons/fi";
 import Hamburger from "../Hamburger/Index";
 import SearchUser from "../SearchUser";
 import { global_chats } from "@/utils/constants";
+import { useState } from "react";
+import Modal from "../Modal/Index";
 
 const TitleBar = ({ title, photo }) => {
+  const [isModalEnabled, setModalEnabled] = useState(false);
+  const onHandleModal = () => setModalEnabled((prev) => !prev);
+
   return (
     <div className={styles.TitleBar}>
       <span>
@@ -26,10 +31,13 @@ const TitleBar = ({ title, photo }) => {
                       height={40}
                     />
                   ))}
-
+                {/* <Image src={photo} alt="user_logo" width={40} height={40} /> */}
                 <h2>{title}</h2>
               </div>
-              <SearchUser />
+              <div className={styles.searchIcon} onClick={onHandleModal}>
+                {isModalEnabled && <Modal setModalEnabled={setModalEnabled} />}
+                <FiSearch />
+              </div>
               <span>
                 <Hamburger />
               </span>

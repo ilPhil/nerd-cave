@@ -1,55 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
-
-.SingleMessageSidebar {
-  display: flex;
-  gap: 10px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background-color 0.35s;
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.041);
-  &:hover {
-    background-color: #282932;
-    h3 {
-      color: white;
-    }
-  }
-  img {
-    border-radius: 100%;
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-  }
-  .text {
-    width: 100%;
-    overflow: hidden;
-    .nameTime {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+.link {
+  text-decoration: none;
+  .SingleMessageSidebar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.35s;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.041);
+    &:hover {
+      background-color: #282932;
       h3 {
-        font-family: "Poppins", sans-serif;
-        transition: all 0.2s;
-        font-size: 1rem;
+        color: white;
+      }
+    }
+    img {
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    .text {
+      width: 100%;
+      overflow: hidden;
+      .nameTime {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        h3 {
+          font-family: "Poppins", sans-serif;
+          transition: all 0.2s;
+          font-size: 1rem;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        p {
+          font-size: 0.8rem;
+          font-weight: 300;
+          color: whitesmoke;
+        }
+      }
+      p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 300;
+        color: white;
+        /* trim della riga del messaggio */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
       }
-      p {
-        font-size: 0.8rem;
-        font-weight: 300;
-        color: whitesmoke;
-      }
-    }
-    p {
-      font-family: "Open Sans", sans-serif;
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: white;
-      /* trim della riga del messaggio */
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
 }
