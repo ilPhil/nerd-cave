@@ -6,7 +6,7 @@ function SingleTopic({ data }) {
     <>
       <li className={styles.topicItem}>
         <Link href={data.route}>
-          {data.icon} {data.name}
+          {data.icon} {data.name.replace("-", " e ")}
         </Link>
       </li>
     </>
