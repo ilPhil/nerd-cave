@@ -5,7 +5,7 @@ import Hamburger from "../Hamburger/Index";
 import SearchUser from "../SearchUser";
 import { global_chats } from "@/utils/constants";
 
-const TitleBar = ({ title }) => {
+const TitleBar = ({ title, photo }) => {
   return (
     <div className={styles.TitleBar}>
       <span>

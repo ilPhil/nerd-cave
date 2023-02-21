@@ -17,7 +17,7 @@ import {
 import { useEffect, useState } from "react";
 import { UserSection } from "../UserSection";
 
-function ChatSidebar() {
+function ChatSidebar({ node, setNode }) {
   const [lastPrivateMessages, setLastPrivateMessages] = useState([]);
   const [primo, setPrimo] = useState(true);
   const [somethingHappens, setSomethingHappens] = useState(null);
@@ -68,7 +68,11 @@ function ChatSidebar() {
             if (lastMessage === null) return;
             allMex = [
               ...allMex,
-              { otherUser: otherUser, lastMessage: lastMessage },
+              {
+                otherUser: otherUser,
+                lastMessage: lastMessage,
+                node: doc.id,
+              },
             ];
           }
           return allMex;
@@ -85,13 +89,16 @@ function ChatSidebar() {
       <div className={styles.home}>
         <Image src={logo} alt="logo" width={150} height={150} />
       </div>
-      <div className={styles.lastMessageContainer}>
-        <h3 className={styles.title}>Ultimi Messaggi:</h3>
-        <div className={styles.lastMsgs}>
-          {lastPrivateMessages.map((item, i) => (
-            <SingleMessageSidebar data={item} key={i} />
-          ))}
-        </div>
+      <h3 className={styles.title}>Ultimi Messaggi:</h3>
+      <div className={styles.lastMsgs}>
+        {lastPrivateMessages.map((item, i) => (
+          <SingleMessageSidebar
+            data={item}
+            node={node}
+            setNode={setNode}
+            key={i}
+          />
+        ))}
       </div>
       <div className={styles.topicnUser}>
         <div className={styles.topics}>
@@ -106,7 +113,6 @@ function ChatSidebar() {
 }
 
 const getLastMessage = async (privateMessageNode) => {
-  console.log("Entrato in getLastMessage");
   if (!privateMessageNode) return;
   let result = null;
   const q = query(
