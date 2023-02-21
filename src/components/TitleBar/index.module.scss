@@ -35,6 +35,9 @@
           transform: scale(1.2) rotateY(360deg) rotateZ(-30deg);
         }
       }
+      .avatar {
+        border-radius: 100%;
+      }
     }
 
     h2 {
@@ -44,6 +47,7 @@
     }
     .searchIcon {
       font-size: 1.5rem;
+      cursor: pointer;
     }
     /*     input {
       font-family: "Poppins", sans-serif;
