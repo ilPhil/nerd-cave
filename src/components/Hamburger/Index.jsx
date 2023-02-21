@@ -20,7 +20,7 @@ const Hamburger = () => {
             <li className={style.li__item}>
               {topic.icon}
               <a className={style.menu__item} href={topic.route}>
-                {topic.name}
+                {topic.name.replace("-", " e ")}
               </a>
             </li>
           ))}

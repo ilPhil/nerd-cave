@@ -1,8 +1,10 @@
 import styles from "./index.module.scss";
+import { auth } from "@/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function SingleMessageSidebar({ data }) {
-  console.log(data.otherUser);
-  console.log("Immagine: ", data?.otherUser?.photoURL);
+  const [user] = useAuthState(auth);
+
   return (
     <div className={styles.SingleMessageSidebar}>
       <img src={data?.otherUser?.photoURL} alt="avatar" />
@@ -11,7 +13,11 @@ function SingleMessageSidebar({ data }) {
           <h3>{data?.otherUser?.displayName}</h3>
           <p>{convertTimeStamp(data?.lastMessage?.createdAt)}</p>
         </div>
-        <p>{data?.lastMessage?.text}</p>
+        <p>
+          {user.uid === data?.sender
+            ? `Tu: ${data?.lastMessage?.text}`
+            : data?.lastMessage?.text}
+        </p>
       </div>
     </div>
   );

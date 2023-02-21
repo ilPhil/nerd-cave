@@ -1,9 +1,9 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-//import imagesChat from "@/../public/images";
-import imgMessages from "@/../public/messages.png";
+
 import Hamburger from "../Hamburger/Index";
 import SearchUser from "../SearchUser";
+import { global_chats } from "@/utils/constants";
 
 const TitleBar = ({ title }) => {
   return (
@@ -16,12 +16,17 @@ const TitleBar = ({ title }) => {
           <div className={styles.description}>
             <div className={styles.text}>
               <div className={styles.title}>
-                <Image
-                  src={imgMessages}
-                  alt="title_logo"
-                  width={40}
-                  height={40}
-                />
+                {global_chats
+                  .filter((item) => item.name == title)
+                  .map((img) => (
+                    <Image
+                      src={img.image}
+                      alt="title_logo"
+                      width={40}
+                      height={40}
+                    />
+                  ))}
+
                 <h2>{title}</h2>
               </div>
               <SearchUser />
