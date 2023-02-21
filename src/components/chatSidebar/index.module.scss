@@ -9,6 +9,9 @@
   .home {
     display: flex;
     justify-content: center;
+    img {
+      transition: 0.25s;
+    }
     img:hover {
       filter: drop-shadow(1px 1px 20px #38b6ff);
     }
@@ -61,7 +64,6 @@
 }
 
 .lastMsgs {
-  height: 322px;
   overflow-y: scroll;
 
   &::-webkit-scrollbar-track {
