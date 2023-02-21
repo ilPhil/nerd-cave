@@ -5,44 +5,58 @@ import { auth } from "@/firebase";
 const Message = ({ data, privateChat }) => {
   const [user] = useAuthState(auth);
   return (
-    <div
-      className={`${
-        user.uid === data.uid
-          ? `${styles.Message} ${styles.user}`
-          : `${styles.Message} ${styles.prova}`
-      }`}
-    >
+    <>
       {privateChat ? (
         <>
-          <div className={styles.text}>
-            <span>
-              <h3>{user.uid === data.uid ? "Tu" : data.name}</h3>
-            </span>
-            <div className={styles.paragraphAndTime}>
-              <p className={styles.contentMessage}>{data.text}</p>
-              <p className={styles.time}>{convertTimeStamp(data?.createdAt)}</p>
+          <div
+            className={`${
+              user.uid === data.sender
+                ? `${styles.Message} ${styles.user}`
+                : `${styles.Message} ${styles.prova}`
+            }`}
+          >
+            <div className={styles.text}>
+              <span>
+                {/* <h3>{user.uid === data.sender ? "Tu" : data.name}</h3> */}
+              </span>
+              <div className={styles.paragraphAndTime}>
+                <p className={styles.contentMessage}>{data.text}</p>
+                <p className={styles.time}>
+                  {convertTimeStamp(data?.createdAt)}
+                </p>
+              </div>
             </div>
           </div>
         </>
       ) : (
         <>
-          <img
-            className={styles.userImg}
-            src={data.avatar + ""}
-            alt={data.name}
-          />
-          <div className={styles.text}>
-            <span>
-              <h3>{user.uid === data.uid ? "Tu" : data.name}</h3>
-            </span>
-            <div className={styles.paragraphAndTime}>
-              <p className={styles.contentMessage}>{data.text}</p>
-              <p className={styles.time}>{convertTimeStamp(data?.createdAt)}</p>
+          <div
+            className={`${
+              user.uid === data.uid
+                ? `${styles.Message} ${styles.user}`
+                : `${styles.Message} ${styles.prova}`
+            }`}
+          >
+            <img
+              className={styles.userImg}
+              src={data.avatar + ""}
+              alt={data.name}
+            />
+            <div className={styles.text}>
+              <span>
+                <h3>{user.uid === data.uid ? "Tu" : data.name}</h3>
+              </span>
+              <div className={styles.paragraphAndTime}>
+                <p className={styles.contentMessage}>{data.text}</p>
+                <p className={styles.time}>
+                  {convertTimeStamp(data?.createdAt)}
+                </p>
+              </div>
             </div>
           </div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

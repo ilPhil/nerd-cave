@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { auth, db } from "../../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-const MessageBar = ({ dbname }) => {
+const MessageBar = ({ dbname, privateChat }) => {
   const [message, setMessage] = useState("");
 
   const sendMessage = async (event) => {
@@ -15,14 +15,23 @@ const MessageBar = ({ dbname }) => {
       alert("Il messaggio non è valido");
       return;
     }
+    console.log(privateChat);
     const { uid, displayName, photoURL } = auth.currentUser;
-    await addDoc(collection(db, dbname), {
-      text: message,
-      name: displayName,
-      avatar: photoURL,
-      createdAt: serverTimestamp(),
-      uid,
-    });
+    if (privateChat) {
+      await addDoc(collection(db, `privateMessages/${dbname}/messages`), {
+        text: message,
+        createdAt: serverTimestamp(),
+        sender: uid,
+      });
+    } else {
+      await addDoc(collection(db, dbname), {
+        text: message,
+        name: displayName,
+        avatar: photoURL,
+        createdAt: serverTimestamp(),
+        uid,
+      });
+    }
     setMessage("");
   };
   return (
