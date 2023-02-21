@@ -14,7 +14,7 @@ import {
   limit,
 } from "@firebase/firestore";
 
-const MessagesList = ({ dbname }) => {
+const MessagesList = ({ dbname, privateChat }) => {
   const [messages, setMessages] = useState([]);
   const messagesEl = useRef(null);
   //TODO: verificare che il dbname sia in una lista
@@ -28,7 +28,16 @@ const MessagesList = ({ dbname }) => {
   };
 
   useEffect(() => {
-    const q = query(collection(db, dbname), orderBy("createdAt"), limit(50));
+    let q = null;
+    if (privateChat) {
+      q = query(
+        collection(db, `privateMessages/${dbname}/messages`),
+        orderBy("createdAt"),
+        limit(300)
+      );
+    } else {
+      q = query(collection(db, dbname), orderBy("createdAt"), limit(300));
+    }
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let messages = [];
       QuerySnapshot.forEach((doc) => {
@@ -43,12 +52,12 @@ const MessagesList = ({ dbname }) => {
     scrollDown();
   }, [messages]);
 
-  console.log(messages);
+  console.log("messages: ", messages);
   return (
     <div className={styles.MessagesList}>
       <div className={styles.messages} ref={messagesEl}>
         {messages.map((item, i) => (
-          <Message data={item} key={i} />
+          <Message data={item} key={i} privateChat={privateChat} />
         ))}
       </div>
       <MessageBar dbname={dbname} />

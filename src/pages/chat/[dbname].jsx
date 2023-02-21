@@ -10,14 +10,18 @@ import Login from "@/components/Login";
 
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useState } from "react";
 
 export default function () {
   const router = useRouter();
   const db_name = router.query.dbname;
-  console.log("in db name:", db_name);
-  console.log("log query:", router.query);
   const [user] = useAuthState(auth);
 
+  const [node, setNode] = useState({});
+
+  console.log("HAI APERTO LA CHAT CON ", node);
+
+  //TODO: CONTROLLO: SE QUALCUNO CERCA /private BISOGNA VERIFICARE CHE CI SIA IL NODE
   return (
     <>
       {!user ? (
@@ -36,11 +40,35 @@ export default function () {
 
           <main className={styles.main}>
             <div className={styles.leftSide}>
-              <ChatSidebar />
+              <ChatSidebar node={node} setNode={setNode} />
             </div>
             <div className={styles.rightSide}>
-              <TitleBar title={db_name} />
-              {db_name && <MessagesList dbname={db_name} />}
+              {db_name === "private" ? (
+                node.otherUser ? (
+                  <>
+                    <TitleBar
+                      title={node.otherUser.displayName}
+                      photo={node.otherUser.photoURL}
+                    />
+                    <MessagesList dbname={node.node} privateChat={true} />
+                  </>
+                ) : (
+                  <h1>errore</h1>
+                )
+              ) : (
+                <>
+                  <TitleBar title={db_name} />
+                  {db_name && (
+                    <MessagesList dbname={db_name} privateChat={false} />
+                  )}
+                </>
+              )}
+              {/* {db_name === "private" && node.otherUser ? (
+                <TitleBar title={node.otherUser.displayName} />
+              ) : (
+                <h1>ERRORE</h1>
+              )} */}
+              {/* {db_name && <MessagesList dbname={db_name} />} */}
             </div>
           </main>
         </>
