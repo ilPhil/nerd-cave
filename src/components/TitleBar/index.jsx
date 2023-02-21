@@ -7,7 +7,7 @@ import { global_chats } from "@/utils/constants";
 import { useState } from "react";
 import Modal from "../Modal/Index";
 
-const TitleBar = ({ title, photo }) => {
+const TitleBar = ({ title, photo, setNode }) => {
   const [isModalEnabled, setModalEnabled] = useState(false);
   const onHandleModal = () => setModalEnabled((prev) => !prev);
 
@@ -15,7 +15,9 @@ const TitleBar = ({ title, photo }) => {
 
   return (
     <>
-      {isModalEnabled && <Modal setModalEnabled={setModalEnabled} />}
+      {isModalEnabled && (
+        <Modal setNode={setNode} setModalEnabled={setModalEnabled} />
+      )}
       <div className={styles.TitleBar}>
         <span>
           <Hamburger />

@@ -15,7 +15,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
-const SearchUser = () => {
+const SearchUser = ({ setNode }) => {
   const [userToSearch, setUserToSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [usersFiltered, setUsersFiltered] = useState([]);
@@ -34,6 +34,13 @@ const SearchUser = () => {
       const documents = await getDocs(collection(db, "users"));
       // console.log(documents);
       documents.forEach((doc) => {
+        if (
+          doc
+            .data()
+            .displayName.toLowerCase()
+            .includes(auth.currentUser.displayName.toLowerCase())
+        )
+          return;
         setUsers((users) => [...users, doc.data()]);
       });
       console.log("Finito operazioni");
@@ -66,10 +73,13 @@ const SearchUser = () => {
     const docSnap = await getDoc(docRef);
     if (!docSnap.exists()) {
       await setDoc(doc(db, "privateMessages", relationId), {});
-      console.log("Relazione creata");
     } else {
-      console.log("Relazione esisteva giÃ "); //TODO: REDIRECT IN CHAT PRIVATA
+      console.log("Relazione esisteva gia "); //TODO: REDIRECT IN CHAT PRIVATA
     }
+    console.log("Sendere id ::::::::", senderId);
+    console.log("Recivier id::::::::::", recivierId);
+
+    setNode(recivierId);
   };
 
   return (
@@ -82,9 +92,10 @@ const SearchUser = () => {
         {usersFiltered.map((userFiltered) => (
           <p
             key={userFiltered.uid}
-            onClick={() =>
-              onClickUserCreateRelation(user.uid, userFiltered.uid)
-            }
+            onClick={() => {
+              onClickUserCreateRelation(user.uid, userFiltered.uid);
+              //todo redirect
+            }}
           >
             {userFiltered.uid + " " + userFiltered.displayName}
           </p>

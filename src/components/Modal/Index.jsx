@@ -1,14 +1,14 @@
 import SearchUser from "../SearchUser";
 import styles from "./index.module.scss";
 
-const Modal = ({ setModalEnabled }) => {
+const Modal = ({ setModalEnabled, setNode }) => {
   const onHandleModal = () => setModalEnabled(false);
 
   return (
     <div className={styles.overlay}>
       <button onClick={onHandleModal}>X</button>
       <div className={styles.Modal}>
-        <SearchUser />
+        <SearchUser setNode={setNode} />
         <div className={styles.utentList}>
           <div className={styles.utent}>
             <img src="https://picsum.photos/50/50?1" alt="logo_utente"></img>

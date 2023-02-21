@@ -47,17 +47,20 @@ export default function () {
                 node.otherUser ? (
                   <>
                     <TitleBar
+                      setNode={setNode}
                       title={node.otherUser.displayName}
                       photo={node.otherUser.photoURL}
                     />
                     <MessagesList dbname={node.node} privateChat={true} />
                   </>
                 ) : (
-                  <h1>errore</h1>
+                  <>
+                    <h1>CHAT PRIVATA NUOVA</h1>
+                  </>
                 )
               ) : (
                 <>
-                  <TitleBar title={db_name} />
+                  <TitleBar title={db_name} setNode={setNode} />
                   {db_name && (
                     <MessagesList dbname={db_name} privateChat={false} />
                   )}
