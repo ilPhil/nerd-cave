@@ -16,6 +16,7 @@ import {
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { UserSection } from "../UserSection";
+import Link from "next/link";
 
 function ChatSidebar({ node, setNode }) {
   const [lastPrivateMessages, setLastPrivateMessages] = useState([]);
@@ -87,7 +88,9 @@ function ChatSidebar({ node, setNode }) {
   return (
     <div className={styles.ChatSidebar}>
       <div className={styles.home}>
-        <Image src={logo} alt="logo" width={150} height={150} />
+        <Link href="/">
+          <Image src={logo} alt="logo" width={150} height={150} />
+        </Link>
       </div>
       <h3 className={styles.title}>Ultimi Messaggi:</h3>
       <div className={styles.lastMsgs}>

@@ -15,3 +15,12 @@
   flex-direction: column;
   background-color: #17181f;
 }
+
+@media (max-width: 767px) {
+  .leftSide {
+    display: none;
+  }
+  .rightSide {
+    width: 100%;
+  }
+}

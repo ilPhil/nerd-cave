@@ -36,7 +36,13 @@ const TitleBar = ({ title, photo }) => {
                       />
                     ))}
                   {photo && (
-                    <Image src={photo} alt="user_logo" width={40} height={40} />
+                    <Image
+                      src={photo}
+                      alt="user_logo"
+                      width={40}
+                      height={40}
+                      className={styles.avatar}
+                    />
                   )}
                   <h2>{title}</h2>
                 </div>

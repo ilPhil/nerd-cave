@@ -6,6 +6,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import Link from "next/link";
 
+import imgLogoNerdCave from "@/../public/LogoNerdCave.png";
+import Image from "next/image";
+
 import Login from "@/components/Login";
 import Start from "@/components/BtnStart";
 import Head from "next/head";
@@ -35,6 +38,12 @@ export default function Home() {
           <main className={styles.main}>
             <Hamburger />
             <div className={styles.Wrapper}>
+              <Image
+                src={imgLogoNerdCave}
+                width={200}
+                height={200}
+                className={styles.logo}
+              />
               <div className={styles.text}>
                 <p className={styles.helloUser}>
                   Hello, <span> {user.displayName}</span>
@@ -52,13 +61,15 @@ export default function Home() {
                     purus porttitor.
                   </p>
                 </div>
-                <div className={styles.btns}>
-                  <button>
+                <div className={styles.containerBtn}>
+                  <button className={styles.btn}>
                     <Link href="/chat/messages">Chat Globale</Link>
                   </button>
                 </div>
               </div>
-              <Scene />
+              <div className={styles.room}>
+                <Scene />
+              </div>
             </div>
           </main>
         </>
