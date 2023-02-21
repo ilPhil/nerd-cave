@@ -4,7 +4,7 @@
   background-color: #1f2029;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100vh;
   .home {
     display: flex;
@@ -20,6 +20,7 @@
     font-weight: 600;
     font-size: 1.3rem;
     color: #ecf0f1;
+    margin-bottom: 24px;
   }
 
   .lastMsgs {
@@ -27,11 +28,7 @@
     gap: 9px;
   }
   .topicnUser {
-    .topics {
-      display: flex;
-      flex-direction: column;
-    }
-
+    margin-top: auto;
     .topics {
       ul {
         list-style-type: none;

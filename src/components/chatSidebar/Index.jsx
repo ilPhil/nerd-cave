@@ -85,11 +85,13 @@ function ChatSidebar() {
       <div className={styles.home}>
         <Image src={logo} alt="logo" width={150} height={150} />
       </div>
-      <h3 className={styles.title}>Ultimi Messaggi:</h3>
-      <div className={styles.lastMsgs}>
-        {lastPrivateMessages.map((item, i) => (
-          <SingleMessageSidebar data={item} key={i} />
-        ))}
+      <div className={styles.lastMessageContainer}>
+        <h3 className={styles.title}>Ultimi Messaggi:</h3>
+        <div className={styles.lastMsgs}>
+          {lastPrivateMessages.map((item, i) => (
+            <SingleMessageSidebar data={item} key={i} />
+          ))}
+        </div>
       </div>
       <div className={styles.topicnUser}>
         <div className={styles.topics}>
