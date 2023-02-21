@@ -60,7 +60,7 @@ const MessagesList = ({ dbname, privateChat }) => {
           <Message data={item} key={i} privateChat={privateChat} />
         ))}
       </div>
-      <MessageBar dbname={dbname} />
+      <MessageBar dbname={dbname} privateChat={privateChat} />
     </div>
   );
 };
