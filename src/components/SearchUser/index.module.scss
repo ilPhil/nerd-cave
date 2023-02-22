@@ -10,6 +10,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.089);
       padding: 10px 5px 5px 10px;
       font-size: 1rem;
+      
 
       &:focus {
         outline: none;
@@ -50,6 +51,13 @@
 }
 
 @media screen and (max-width: 767px) {
+  .Modal {
+   form {
+      .searchInput {
+        width: 80%;
+      }
+   }
+  } 
   .utentList {
     a {
       font-size: 0.8rem;

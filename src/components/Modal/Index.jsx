@@ -9,7 +9,7 @@ const Modal = ({ setModalEnabled, setNode }) => {
       <div className={styles.Modal}>
         <div className={styles.bar}>
           <button onClick={onHandleModal}>X</button>
-          <SearchUser setNode={setNode} />
+          <SearchUser setNode={setNode}/>
         </div>
       </div>
     </div>
