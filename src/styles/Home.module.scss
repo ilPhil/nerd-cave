@@ -106,7 +106,7 @@
   }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .main {
     background-color: linear-gradient(180deg, #1c1035 0%, #191919 100%);
 
@@ -157,4 +157,59 @@
       }
     }
   }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main {
+    background-color: linear-gradient(180deg, #1c1035 0%, #191919 100%);
+    display: flex;
+    .Wrapper {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+      //gap: 50px;
+      justify-content: flex-start;
+      align-items: center;
+      
+      .text {
+        padding: 6% 3%;
+        gap: 10px;
+        .helloUser {
+          font-size: 2.7rem;
+          margin-bottom: 30px;
+        }
+        h1 {
+          font-size: 3.1rem;
+        }
+        h2 {
+          font-size: 3.1rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+        .containerBtn {
+          .btn {
+            padding: 10px;
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.6rem;
+              &:visited {
+                color: whitesmoke;
+              }
+            }
+          }
+        }
+      }
+      .logo {
+        display: block;
+        margin-left: -15px;
+        align-self: flex-start;
+      }
+      .room {
+        display: none;
+      }
+    }
+  } 
 }
