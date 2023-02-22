@@ -55,7 +55,7 @@ export default function () {
                   </>
                 ) : (
                   <>
-                    <h1>CHAT PRIVATA NUOVA</h1>
+                    <h1>errore</h1>
                   </>
                 )
               ) : (

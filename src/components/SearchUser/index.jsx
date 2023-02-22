@@ -9,11 +9,13 @@ import {
   setDoc,
   doc,
   getDoc,
+  addDoc,
 } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
+import Link from "next/link";
 
 const SearchUser = ({ setNode }) => {
   const [userToSearch, setUserToSearch] = useState("");
@@ -73,13 +75,17 @@ const SearchUser = ({ setNode }) => {
     const docSnap = await getDoc(docRef);
     if (!docSnap.exists()) {
       await setDoc(doc(db, "privateMessages", relationId), {});
+      await addDoc(
+        collection(db, `privateMessages/${relationId}/messages`),
+        {}
+      );
     } else {
       console.log("Relazione esisteva gia "); //TODO: REDIRECT IN CHAT PRIVATA
     }
     console.log("Sendere id ::::::::", senderId);
     console.log("Recivier id::::::::::", recivierId);
-
-    setNode(recivierId);
+    let otherUser = await getUserById(recivierId);
+    setNode({ otherUser, node: relationId });
   };
 
   return (
@@ -90,7 +96,8 @@ const SearchUser = ({ setNode }) => {
       </form>
       <div>
         {usersFiltered.map((userFiltered) => (
-          <p
+          <Link
+            href={"/chat/private"}
             key={userFiltered.uid}
             onClick={() => {
               onClickUserCreateRelation(user.uid, userFiltered.uid);
@@ -98,11 +105,24 @@ const SearchUser = ({ setNode }) => {
             }}
           >
             {userFiltered.uid + " " + userFiltered.displayName}
-          </p>
+          </Link>
         ))}
       </div>
     </div>
   );
+};
+
+export const getUserById = async (id) => {
+  return await getDocs(collection(db, "users")).then((documents) => {
+    let result = null;
+    documents.forEach(async (doc) => {
+      const userSnap = doc.data();
+      if (userSnap.uid === id) {
+        result = doc.data();
+      }
+    });
+    return result;
+  });
 };
 
 export default SearchUser;

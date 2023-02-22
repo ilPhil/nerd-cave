@@ -37,6 +37,13 @@ function ChatSidebar({ node, setNode }) {
           const q = query(collection(db, `privateMessages/${doc.id}/messages`));
           const unsubscribe = onSnapshot(q, async (QuerySnapshot) => {
             // setLastPrivateMessages([]);
+            console.log("ELENCO DEGLI SNAP:", doc.id);
+            setSomethingHappens(QuerySnapshot);
+          });
+          const q2 = query(collection(db, `privateMessages`));
+          const unsubscribe2 = onSnapshot(q2, async (QuerySnapshot) => {
+            console.log("RILEVATO CHANGE NEL DB PRIV MEX");
+            // setLastPrivateMessages([]);
             setSomethingHappens(QuerySnapshot);
           });
         }
@@ -79,7 +86,7 @@ function ChatSidebar({ node, setNode }) {
           return allMex;
         })
       );
-      setLastPrivateMessages([]);
+      // setLastPrivateMessages([]);
       setLastPrivateMessages(allMex);
     };
     fetchData();
