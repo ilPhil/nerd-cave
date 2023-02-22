@@ -101,6 +101,15 @@
     font-size: 20px;
   }
 }
+.privateChat {
+  display: flex;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+  cursor: pointer;
+  color: #38b6ff;
+}
+
 .menu__item {
   display: block;
   padding: 12px 24px;
