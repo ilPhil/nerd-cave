@@ -9,7 +9,6 @@ import {
   collection,
   getDocs,
   limit,
-  limitToLast,
   onSnapshot,
   orderBy,
   query,
@@ -26,12 +25,10 @@ function ChatSidebar({ node, setNode }) {
   useEffect(() => {
     const q2 = query(collection(db, `privateMessages`));
     const unsubscribe2 = onSnapshot(q2, async (QuerySnapshot) => {
-      console.log("1");
-      console.log("Rilevato cambiamento nel DB");
-      // setLastPrivateMessages([]);
       setAllSnapshots();
       setSomethingHappens(QuerySnapshot);
     });
+
     const setAllSnapshots = async () => {
       const privateChatNodesDocuments = await getDocs(
         collection(db, "privateMessages")
@@ -44,22 +41,17 @@ function ChatSidebar({ node, setNode }) {
           );
           const q = query(collection(db, `privateMessages/${doc.id}/messages`));
           const unsubscribe = onSnapshot(q, async (QuerySnapshot) => {
-            console.log("2");
-            // setLastPrivateMessages([]);
-            // console.log("ELENCO DEGLI SNAP:", doc.id);
             setSomethingHappens(QuerySnapshot);
           });
         }
       });
       setPrimo(false);
     };
-    // setAllSnapshots();
   }, []);
 
   useEffect(() => {
     if (primo) return;
     const fetchData = async () => {
-      console.log("STO FETCHANDO I DATI DI MERDS");
       const privateChatNodesDocuments = await getDocs(
         collection(db, "privateMessages")
       );
@@ -73,13 +65,11 @@ function ChatSidebar({ node, setNode }) {
         temp.map(async (doc) => {
           const idSpllited = doc.id.split("-");
           if (idSpllited.includes(auth.currentUser.uid)) {
-            console.log("DOC ID:::::", doc.id);
             const otherUserId = idSpllited.filter(
               (element) => element != auth.currentUser.uid
             );
             const otherUser = await getUserById(otherUserId[0]);
             const lastMessage = await getLastMessage(doc.id);
-            console.log("LAST Message::::: ", lastMessage);
             if (lastMessage === null) return;
             allMex = [
               ...allMex,
@@ -93,7 +83,6 @@ function ChatSidebar({ node, setNode }) {
           return allMex;
         })
       );
-      // setLastPrivateMessages([]);
       setLastPrivateMessages(allMex);
     };
     fetchData();
@@ -143,7 +132,6 @@ const getLastMessage = async (privateMessageNode) => {
   }
   return result;
 };
-// getLastMessage("tiziano-nuccio").then((res) => console.log(res));
 
 export const getUserById = async (id) => {
   return await getDocs(collection(db, "users")).then((documents) => {

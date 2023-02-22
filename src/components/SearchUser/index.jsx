@@ -1,9 +1,6 @@
 import {
   query,
   collection,
-  orderBy,
-  onSnapshot,
-  limit,
   where,
   getDocs,
   setDoc,
@@ -17,13 +14,11 @@ import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import { FiSearch } from "react-icons/fi";
 
 const SearchUser = ({ setNode }) => {
   const [userToSearch, setUserToSearch] = useState("");
   const [users, setUsers] = useState([]);
   const [usersFiltered, setUsersFiltered] = useState([]);
-  const [primo, setPrimo] = useState(true);
   const [user] = useAuthState(auth);
 
   /**
@@ -32,11 +27,9 @@ const SearchUser = ({ setNode }) => {
    *
    */
   useEffect(() => {
-    console.log("users lung", users.length);
-    console.log("FAatto use effect");
     const fetchData = async () => {
       const documents = await getDocs(collection(db, "users"));
-      // console.log(documents);
+
       documents.forEach((doc) => {
         if (
           doc
@@ -47,16 +40,13 @@ const SearchUser = ({ setNode }) => {
           return;
         setUsers((users) => [...users, doc.data()]);
       });
-      console.log("Finito operazioni");
     };
     fetchData();
-    return () => console.log("Smontato");
+    return;
   }, []);
 
   const onSearchSubmit = (event) => {
     event.preventDefault();
-    //TODO: Rimuovere l'utente connesso alla sessione dalla lista, non puoi cercare te stesso
-    console.log(users.length);
     setUsersFiltered(
       users.filter((user) =>
         user.displayName.toLowerCase().includes(userToSearch.toLowerCase())
@@ -81,11 +71,8 @@ const SearchUser = ({ setNode }) => {
         collection(db, `privateMessages/${relationId}/messages`),
         {}
       );
-    } else {
-      console.log("Relazione esisteva gia "); //TODO: REDIRECT IN CHAT PRIVATA
     }
-    console.log("Sendere id ::::::::", senderId);
-    console.log("Recivier id::::::::::", recivierId);
+
     let otherUser = await getUserById(recivierId);
     setNode({ otherUser, node: relationId });
   };
@@ -112,7 +99,6 @@ const SearchUser = ({ setNode }) => {
               key={userFiltered.uid}
               onClick={() => {
                 onClickUserCreateRelation(user.uid, userFiltered.uid);
-                //todo redirect
               }}
             >
               {userFiltered.displayName}

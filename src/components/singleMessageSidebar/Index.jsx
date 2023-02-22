@@ -12,10 +12,7 @@ function SingleMessageSidebar({ data, node, setNode }) {
       onClick={() => setNode(data)}
       className={styles.link}
     >
-      <div
-        className={styles.SingleMessageSidebar}
-        onClick={() => console.log(data.node)}
-      >
+      <div className={styles.SingleMessageSidebar}>
         <img src={data?.otherUser?.photoURL} alt="avatar" />
         <div className={styles.text}>
           <div className={styles.nameTime}>
