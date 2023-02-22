@@ -8,13 +8,13 @@
   &.user {
     justify-content: flex-start;
     flex-direction: row-reverse;
-    padding: 5px;
+    padding-right: 6px;
     .text {
       background-color: #554671;
       border-radius: 10px 0 10px 10px;
     }
   }
-  &.prova {
+  &.otherUser {
     background-color: transparent;
   }
   .userImg {
@@ -40,23 +40,23 @@
       font-size: 0.9rem;
       color: whitesmoke;
       font-family: "Poppins", sans-serif;
-      font-weight: 800;
+      font-weight: 600;
     }
     .paragraphAndTime {
       width: 100%;
       display: flex;
-      gap: 20px;
+      gap: 10px;
       align-items: flex-end;
       justify-content: space-between;
 
       .contentMessage {
+        width: 100%;
         color: whitesmoke;
         font-size: 0.9rem;
         font-weight: 300;
         font-family: "Open Sans", sans-serif;
         /* trim della riga del messaggio */
         //white-space: nowrap;
-
         overflow: hidden;
         text-overflow: ellipsis;
         word-wrap: break-word;
@@ -67,11 +67,6 @@
         font-weight: 300;
         font-family: "Open Sans", sans-serif;
       }
-    }
-    span {
-      display: flex;
-      gap: 10px;
-      align-items: center;
     }
   }
 }

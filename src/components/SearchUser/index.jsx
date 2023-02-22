@@ -96,12 +96,12 @@ const SearchUser = ({ setNode }) => {
             </div>
             <Link
               href={"/chat/private"}
-              key={userFiltered.uid}
+              key={userFiltered?.uid}
               onClick={() => {
-                onClickUserCreateRelation(user.uid, userFiltered.uid);
+                onClickUserCreateRelation(user.uid, userFiltered?.uid);
               }}
             >
-              {userFiltered.displayName}
+              {userFiltered?.displayName}
             </Link>
           </div>
         ))}

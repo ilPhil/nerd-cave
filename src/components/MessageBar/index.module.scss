@@ -1,43 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap%27");
 
-.MessageBar {
-  box-shadow: 14px 4px 48px -10px rgba(0, 0, 0, 0.25);
-  padding: 5px 10px;
-  margin: 10px 0;
-  background: #1f2029;
-  color: whitesmoke;
-  display: flex;
-  justify-content: space-between;
-  input {
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    background: transparent;
-    border: none;
-    width: 90%;
-    color: whitesmoke;
-    &:focus {
-      outline: none;
-    }
-    &::placeholder {
-      font-family: "Poppins", sans-serif;
-      font-size: 1rem;
-    }
+.main {
+  position: relative;
+  .merda {
+    position: absolute;
+    bottom: 100%;
   }
-
-  .buttons {
+  .MessageBar {
+    box-shadow: 14px 4px 48px -10px rgba(0, 0, 0, 0.25);
+    padding: 5px 10px;
+    margin: 10px 0;
+    background: #1f2029;
+    color: whitesmoke;
     display: flex;
-    gap: 0.2rem;
-    .emoji {
+    justify-content: space-between;
+    gap: 15px;
+    input {
+      font-family: "Open Sans", sans-serif;
+      font-size: 0.9rem;
+      background: transparent;
+      border: none;
+      width: 90%;
       color: whitesmoke;
-      font-size: 30px;
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-family: "Open Sans", sans-serif;
+      }
+    }
+    .emoji {
+      color: rgba(255, 255, 255, 0.61);
+      font-size: 1.7rem;
       margin: 5px;
       cursor: pointer;
       transition: all 0.35s;
-    }
-    .emoji:hover {
-      background: #8c52ff;
-      border-radius: 100%;
-      border: none;
+      &:hover {
+        color: #8c52ff;
+        border: none;
+      }
+      .buttons {
+        display: flex;
+        gap: 0.2rem;
+      }
     }
   }
 }

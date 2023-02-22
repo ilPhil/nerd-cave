@@ -26,8 +26,8 @@ const Hamburger = ({ setNode }) => {
               <li className={style.logout}>
                 <UserSection />
               </li>
-              {global_chats.map((topic) => (
-                <li className={style.li__item}>
+              {global_chats.map((topic, i) => (
+                <li className={style.li__item} key={i}>
                   {topic.icon}
                   <Link className={style.menu__item} href={topic.route}>
                     {topic.name.replace("-", " e ")}
