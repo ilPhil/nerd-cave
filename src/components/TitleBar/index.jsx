@@ -50,7 +50,7 @@ const TitleBar = ({ title, photo, setNode }) => {
                   <FiSearch />
                 </div>
                 <span>
-                  <Hamburger />
+                  <Hamburger setNode={setNode} />
                 </span>
               </div>
             </div>
