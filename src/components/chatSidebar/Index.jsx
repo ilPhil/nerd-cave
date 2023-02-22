@@ -24,6 +24,14 @@ function ChatSidebar({ node, setNode }) {
   const [somethingHappens, setSomethingHappens] = useState(null);
 
   useEffect(() => {
+    const q2 = query(collection(db, `privateMessages`));
+    const unsubscribe2 = onSnapshot(q2, async (QuerySnapshot) => {
+      console.log("1");
+      console.log("Rilevato cambiamento nel DB");
+      // setLastPrivateMessages([]);
+      setAllSnapshots();
+      setSomethingHappens(QuerySnapshot);
+    });
     const setAllSnapshots = async () => {
       const privateChatNodesDocuments = await getDocs(
         collection(db, "privateMessages")
@@ -36,26 +44,22 @@ function ChatSidebar({ node, setNode }) {
           );
           const q = query(collection(db, `privateMessages/${doc.id}/messages`));
           const unsubscribe = onSnapshot(q, async (QuerySnapshot) => {
+            console.log("2");
             // setLastPrivateMessages([]);
-            console.log("ELENCO DEGLI SNAP:", doc.id);
-            setSomethingHappens(QuerySnapshot);
-          });
-          const q2 = query(collection(db, `privateMessages`));
-          const unsubscribe2 = onSnapshot(q2, async (QuerySnapshot) => {
-            console.log("RILEVATO CHANGE NEL DB PRIV MEX");
-            // setLastPrivateMessages([]);
+            // console.log("ELENCO DEGLI SNAP:", doc.id);
             setSomethingHappens(QuerySnapshot);
           });
         }
       });
       setPrimo(false);
     };
-    setAllSnapshots();
+    // setAllSnapshots();
   }, []);
 
   useEffect(() => {
     if (primo) return;
     const fetchData = async () => {
+      console.log("STO FETCHANDO I DATI DI MERDS");
       const privateChatNodesDocuments = await getDocs(
         collection(db, "privateMessages")
       );
@@ -64,15 +68,18 @@ function ChatSidebar({ node, setNode }) {
       privateChatNodesDocuments.forEach((doc) => {
         temp = [...temp, doc];
       });
+
       await Promise.all(
         temp.map(async (doc) => {
           const idSpllited = doc.id.split("-");
           if (idSpllited.includes(auth.currentUser.uid)) {
+            console.log("DOC ID:::::", doc.id);
             const otherUserId = idSpllited.filter(
               (element) => element != auth.currentUser.uid
             );
             const otherUser = await getUserById(otherUserId[0]);
             const lastMessage = await getLastMessage(doc.id);
+            console.log("LAST Message::::: ", lastMessage);
             if (lastMessage === null) return;
             allMex = [
               ...allMex,
