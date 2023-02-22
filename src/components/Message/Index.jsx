@@ -16,9 +16,7 @@ const Message = ({ data, privateChat }) => {
             }`}
           >
             <div className={styles.text}>
-              <span>
-                {/* <h3>{user.uid === data.sender ? "Tu" : data.name}</h3> */}
-              </span>
+              <span></span>
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data.text}</p>
                 <p className={styles.time}>

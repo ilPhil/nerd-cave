@@ -2,7 +2,6 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { FiSearch } from "react-icons/fi";
 import Hamburger from "../Hamburger/Index";
-import SearchUser from "../SearchUser";
 import { global_chats } from "@/utils/constants";
 import { useState } from "react";
 import Modal from "../Modal/Index";
@@ -10,8 +9,6 @@ import Modal from "../Modal/Index";
 const TitleBar = ({ title, photo, setNode }) => {
   const [isModalEnabled, setModalEnabled] = useState(false);
   const onHandleModal = () => setModalEnabled((prev) => !prev);
-
-  console.log("Foto: ", photo);
 
   return (
     <>

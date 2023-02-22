@@ -19,9 +19,6 @@ export default function () {
 
   const [node, setNode] = useState({});
 
-  console.log("HAI APERTO LA CHAT CON ", node);
-
-  //TODO: CONTROLLO: SE QUALCUNO CERCA /private BISOGNA VERIFICARE CHE CI SIA IL NODE
   return (
     <>
       {!user ? (
@@ -66,12 +63,6 @@ export default function () {
                   )}
                 </>
               )}
-              {/* {db_name === "private" && node.otherUser ? (
-                <TitleBar title={node.otherUser.displayName} />
-              ) : (
-                <h1>ERRORE</h1>
-              )} */}
-              {/* {db_name && <MessagesList dbname={db_name} />} */}
             </div>
           </main>
         </>

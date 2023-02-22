@@ -17,10 +17,8 @@ import {
 const MessagesList = ({ dbname, privateChat }) => {
   const [messages, setMessages] = useState([]);
   const messagesEl = useRef(null);
-  //TODO: verificare che il dbname sia in una lista
 
   const scrollDown = () => {
-    console.log("scrolla");
     if (messagesEl != null)
       messagesEl.current.scrollBy({
         top: messagesEl.current.scrollHeight,
@@ -52,7 +50,6 @@ const MessagesList = ({ dbname, privateChat }) => {
     scrollDown();
   }, [messages]);
 
-  console.log("messages: ", messages);
   return (
     <div className={styles.MessagesList}>
       <div className={styles.messages} ref={messagesEl}>

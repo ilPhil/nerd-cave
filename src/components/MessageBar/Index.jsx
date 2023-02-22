@@ -15,7 +15,7 @@ const MessageBar = ({ dbname, privateChat }) => {
       alert("Il messaggio non è valido");
       return;
     }
-    console.log(privateChat);
+
     const { uid, displayName, photoURL } = auth.currentUser;
     if (privateChat) {
       await addDoc(collection(db, `privateMessages/${dbname}/messages`), {
