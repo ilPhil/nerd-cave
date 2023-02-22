@@ -26,12 +26,13 @@ const TitleBar = ({ title, photo, setNode }) => {
                 <div className={styles.title}>
                   {global_chats
                     .filter((item) => item.name == title)
-                    .map((img) => (
+                    .map((img, i) => (
                       <Image
                         src={img.image}
                         alt="title_logo"
                         width={40}
                         height={40}
+                        key={i}
                       />
                     ))}
                   {photo && (

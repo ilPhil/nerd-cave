@@ -46,11 +46,15 @@
         font-family: "Open Sans", sans-serif;
         font-size: 0.9rem;
         font-weight: 300;
-        color: white;
+        color: rgb(185, 185, 185);
         /* trim della riga del messaggio */
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        .user {
+          color: whitesmoke;
+          font-weight: 500;
+        }
       }
     }
   }

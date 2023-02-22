@@ -65,7 +65,7 @@ export default function Home() {
                 </div>
                 <div className={styles.containerBtn}>
                   <button className={styles.btn}>
-                    <Link href="/chat/messages">Chat Globale</Link>
+                    <Link href="/chat/globale">Chat Globale</Link>
                   </button>
                 </div>
               </div>

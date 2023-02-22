@@ -2,10 +2,11 @@ import styles from "./index.module.scss";
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Link from "next/link";
+import Image from "next/image";
 
-function SingleMessageSidebar({ data, node, setNode }) {
+function SingleMessageSidebar({ data, setNode }) {
   const [user] = useAuthState(auth);
-
+  console.log("data:" + data);
   return (
     <Link
       href={"/chat/private/"}
@@ -13,16 +14,26 @@ function SingleMessageSidebar({ data, node, setNode }) {
       className={styles.link}
     >
       <div className={styles.SingleMessageSidebar}>
-        <img src={data?.otherUser?.photoURL} alt="avatar" />
+        <Image
+          src={data?.otherUser?.photoURL}
+          alt="avatar"
+          width={40}
+          height={40}
+        />
         <div className={styles.text}>
           <div className={styles.nameTime}>
             <h3>{data?.otherUser?.displayName}</h3>
             <p>{convertTimeStamp(data?.lastMessage?.createdAt)}</p>
           </div>
           <p>
-            {user.uid === data?.sender
-              ? `Tu: ${data?.lastMessage?.text}`
-              : data?.lastMessage?.text}
+            {user.uid === data?.lastMessage?.sender ? (
+              <>
+                <span className={styles.user}>Tu: </span>{" "}
+                <span>{data?.lastMessage?.text}</span>
+              </>
+            ) : (
+              data?.lastMessage?.text
+            )}
           </p>
         </div>
       </div>
