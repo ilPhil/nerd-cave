@@ -16,6 +16,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 import Link from "next/link";
+import Image from "next/image";
+import { FiSearch } from "react-icons/fi";
 
 const SearchUser = ({ setNode }) => {
   const [userToSearch, setUserToSearch] = useState("");
@@ -92,20 +94,30 @@ const SearchUser = ({ setNode }) => {
     <div className={styles.Modal}>
       <form onSubmit={onSearchSubmit}>
         <input onChange={(e) => setUserToSearch(e.target.value)}></input>
-        <input type="submit" value="Cerca" />
+        <input type="submit" value="🔍" className={styles.search} />
       </form>
       <div>
         {usersFiltered.map((userFiltered) => (
-          <Link
-            href={"/chat/private"}
-            key={userFiltered.uid}
-            onClick={() => {
-              onClickUserCreateRelation(user.uid, userFiltered.uid);
-              //todo redirect
-            }}
-          >
-            {userFiltered.uid + " " + userFiltered.displayName}
-          </Link>
+          <div className={styles.utentList}>
+            <div className={styles.utentImg}>
+              <Image
+                src={userFiltered?.photoURL}
+                alt="logo_utente"
+                width={40}
+                height={40}
+              />
+            </div>
+            <Link
+              href={"/chat/private"}
+              key={userFiltered.uid}
+              onClick={() => {
+                onClickUserCreateRelation(user.uid, userFiltered.uid);
+                //todo redirect
+              }}
+            >
+              {userFiltered.displayName}
+            </Link>
+          </div>
         ))}
       </div>
     </div>

@@ -1,19 +1,57 @@
 .Modal {
-  input {
-    font-family: "Poppins", sans-serif;
-    height: 40px;
-    background: none;
-    color: whitesmoke;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.089);
-    padding: 10px 5px 5px 10px;
-    font-size: 1rem;
-
-    &:focus {
-      outline: none;
-    }
-    &::placeholder {
+  form {
+    display: flex;
+    input {
       font-family: "Poppins", sans-serif;
+      height: 40px;
+      background: none;
+      color: whitesmoke;
+      border: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.089);
+      padding: 10px 5px 5px 10px;
+      font-size: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-family: "Poppins", sans-serif;
+        font-size: 0.8rem;
+      }
+    }
+    .search {
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+  }
+
+  .utentList {
+    margin: 8px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: center;
+    .utentImg {
+      img {
+        border-radius: 100%;
+      }
+    }
+
+    a {
+      color: whitesmoke;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 1rem;
+      &:hover {
+        color: #38b6ff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .utentList {
+    a {
       font-size: 0.8rem;
     }
   }
