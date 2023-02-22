@@ -14,10 +14,12 @@ import Start from "@/components/BtnStart";
 import Head from "next/head";
 import Hamburger from "@/components/Hamburger/Index";
 import Scene from "@/components/spline";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   const [user] = useAuthState(auth);
   const [pressed, setPressed] = useState(false);
+  const [loadScene, setLoadScene] = useState(true);
   return (
     <secion className={styles.home}>
       {!user ? (
@@ -68,7 +70,8 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.room}>
-                <Scene />
+                <Scene setLoadScene={setLoadScene} />
+                {loadScene && <Loader />}
               </div>
             </div>
           </main>
