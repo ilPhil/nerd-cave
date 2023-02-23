@@ -11,6 +11,7 @@ import Login from "@/components/Login";
 import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useState } from "react";
+import { global_chats } from "@/utils/constants";
 
 export default function () {
   const router = useRouter();
@@ -57,9 +58,18 @@ export default function () {
                 )
               ) : (
                 <>
+                  {}
                   <TitleBar title={db_name} setNode={setNode} />
-                  {db_name && (
-                    <MessagesList dbname={db_name} privateChat={false} />
+                  {db_name != "private" &&
+                  !global_chats
+                    .map((item) => item)
+                    .map((route) => route.name)
+                    .includes(db_name) ? (
+                    <h1>Chat non esistente</h1>
+                  ) : (
+                    db_name && (
+                      <MessagesList dbname={db_name} privateChat={false} />
+                    )
                   )}
                 </>
               )}
