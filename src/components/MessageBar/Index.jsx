@@ -38,6 +38,7 @@ const MessageBar = ({ dbname, privateChat }) => {
         text: message,
         createdAt: serverTimestamp(),
         sender: uid,
+        seen: false,
       });
     } else {
       await addDoc(collection(db, dbname), {

@@ -5,18 +5,23 @@ import { useEffect, useRef, useState } from "react";
 import MessageBar from "../MessageBar/Index";
 import Message from "../Message/Index";
 
-import { db } from "../../firebase";
+import { auth, db } from "../../firebase";
 import {
   query,
   collection,
   orderBy,
   onSnapshot,
   limit,
+  updateDoc,
+  doc,
 } from "@firebase/firestore";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const MessagesList = ({ dbname, privateChat }) => {
   const [messages, setMessages] = useState([]);
   const messagesEl = useRef(null);
+
+  const [user] = useAuthState(auth);
 
   const scrollDown = () => {
     if (messagesEl != null)
@@ -41,6 +46,17 @@ const MessagesList = ({ dbname, privateChat }) => {
       QuerySnapshot.forEach((doc) => {
         messages.push({ ...doc.data(), id: doc.id });
       });
+      Promise.all(
+        messages.map(async (message) => {
+          if (message?.sender != user.uid)
+            return await updateDoc(
+              doc(db, `privateMessages/${dbname}/messages`, message.id),
+              {
+                seen: true,
+              }
+            );
+        })
+      );
       setMessages(messages);
     });
     return () => unsubscribe();
