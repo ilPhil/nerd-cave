@@ -17,7 +17,7 @@ const TitleBar = ({ title, photo, setNode }) => {
       )}
       <div className={styles.TitleBar}>
         <span>
-          <Hamburger />
+          <Hamburger setNode={setNode} />
         </span>
         <div>
           <div className={styles.contain}>
@@ -49,9 +49,6 @@ const TitleBar = ({ title, photo, setNode }) => {
                 <div className={styles.searchIcon} onClick={onHandleModal}>
                   <FiSearch />
                 </div>
-                <span>
-                  <Hamburger setNode={setNode} />
-                </span>
               </div>
             </div>
           </div>
