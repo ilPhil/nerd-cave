@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "@/firebase";
 import Image from "next/image";
 import { deleteDoc, doc } from "firebase/firestore";
+import { BsTrash } from "react-icons/bs";
 
 const Message = ({ data, privateChat, dbname }) => {
   const [user] = useAuthState(auth);
@@ -25,14 +26,21 @@ const Message = ({ data, privateChat, dbname }) => {
             }`}
           >
             <div className={styles.text}>
-              {user?.uid === data?.sender && (
-                <button onClick={() => deleteMessage()}>Elimina mex</button>
-              )}
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data?.text}</p>
-                <p className={styles.time}>
-                  {convertTimeStamp(data?.createdAt)}
-                </p>
+                <div className={styles.dataNbtn}>
+                  {user?.uid === data?.sender && (
+                    <button
+                      className={styles.btnDelete}
+                      onClick={() => deleteMessage()}
+                    >
+                      <BsTrash />
+                    </button>
+                  )}
+                  <p className={styles.time}>
+                    {convertTimeStamp(data?.createdAt)}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -57,14 +65,21 @@ const Message = ({ data, privateChat, dbname }) => {
               <span>
                 <h3>{user?.uid === data?.uid ? "Tu" : data?.name}</h3>
               </span>
-              {user?.uid === data?.uid && (
-                <button onClick={() => deleteMessage()}>Elimina mex</button>
-              )}
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data.text}</p>
-                <p className={styles.time}>
-                  {convertTimeStamp(data?.createdAt)}
-                </p>
+                <div className={styles.dataNbtn}>
+                  {user?.uid === data?.uid && (
+                    <button
+                      className={styles.btnDelete}
+                      onClick={() => deleteMessage()}
+                    >
+                      <BsTrash />
+                    </button>
+                  )}
+                  <p className={styles.time}>
+                    {convertTimeStamp(data?.createdAt)}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
