@@ -1,10 +1,18 @@
 import styles from "./index.module.scss";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "@/firebase";
+import { auth, db } from "@/firebase";
 import Image from "next/image";
+import { deleteDoc, doc } from "firebase/firestore";
 
-const Message = ({ data, privateChat }) => {
+const Message = ({ data, privateChat, dbname }) => {
   const [user] = useAuthState(auth);
+  const deleteMessage = async () => {
+    if (privateChat) {
+      await deleteDoc(doc(db, `privateMessages/${dbname}/messages`, data.id));
+    } else {
+      await deleteDoc(doc(db, dbname, data.id));
+    }
+  };
   return (
     <>
       {privateChat ? (
@@ -17,6 +25,9 @@ const Message = ({ data, privateChat }) => {
             }`}
           >
             <div className={styles.text}>
+              {user?.uid === data?.sender && (
+                <button onClick={() => deleteMessage()}>Elimina mex</button>
+              )}
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data?.text}</p>
                 <p className={styles.time}>
@@ -46,6 +57,9 @@ const Message = ({ data, privateChat }) => {
               <span>
                 <h3>{user?.uid === data?.uid ? "Tu" : data?.name}</h3>
               </span>
+              {user?.uid === data?.uid && (
+                <button onClick={() => deleteMessage()}>Elimina mex</button>
+              )}
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data.text}</p>
                 <p className={styles.time}>
