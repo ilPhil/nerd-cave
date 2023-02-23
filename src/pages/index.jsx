@@ -21,7 +21,7 @@ export default function Home() {
   const [pressed, setPressed] = useState(false);
   const [loadScene, setLoadScene] = useState(true);
   return (
-    <secion className={styles.home}>
+    <section className={styles.home}>
       {!user ? (
         <Login />
       ) : !pressed ? (
@@ -77,6 +77,6 @@ export default function Home() {
           </main>
         </>
       )}
-    </secion>
+    </section>
   );
 }

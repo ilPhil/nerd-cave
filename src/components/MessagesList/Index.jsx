@@ -32,33 +32,41 @@ const MessagesList = ({ dbname, privateChat }) => {
 
   useEffect(() => {
     let q = null;
+    let unsubscribe = null;
     if (privateChat) {
       q = query(
         collection(db, `privateMessages/${dbname}/messages`),
         orderBy("createdAt"),
         limit(300)
       );
+      unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+        let messages = [];
+        QuerySnapshot.forEach((doc) => {
+          messages.push({ ...doc.data(), id: doc.id });
+        });
+        Promise.all(
+          messages.map(async (message) => {
+            if (message?.sender != user.uid)
+              return await updateDoc(
+                doc(db, `privateMessages/${dbname}/messages`, message.id),
+                {
+                  seen: true,
+                }
+              );
+          })
+        );
+        setMessages(messages);
+      });
     } else {
       q = query(collection(db, dbname), orderBy("createdAt"), limit(300));
-    }
-    const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
-      let messages = [];
-      QuerySnapshot.forEach((doc) => {
-        messages.push({ ...doc.data(), id: doc.id });
+      unsubscribe = onSnapshot(q, (QuerySnapshot) => {
+        let messages = [];
+        QuerySnapshot.forEach((doc) => {
+          messages.push({ ...doc.data(), id: doc.id });
+        });
+        setMessages(messages);
       });
-      Promise.all(
-        messages.map(async (message) => {
-          if (message?.sender != user.uid)
-            return await updateDoc(
-              doc(db, `privateMessages/${dbname}/messages`, message.id),
-              {
-                seen: true,
-              }
-            );
-        })
-      );
-      setMessages(messages);
-    });
+    }
     return () => unsubscribe();
   }, [dbname]);
 
