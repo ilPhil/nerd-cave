@@ -70,6 +70,7 @@
       .containerBtn {
         margin-top: 20px;
         .btn {
+          border: none;
           padding: 20px 30px;
           font-family: "Open Sans", sans-serif;
           font-size: 1.2rem;
@@ -77,9 +78,30 @@
           box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
             rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
             rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-          transition: all 0.3s;
           &:hover {
             color: whitesmoke;
+            box-shadow: 0 0 15px 5px white;
+            animation: box-flicker 1.5s infinite alternate;
+            background-color: black;
+            @keyframes box-flicker {
+              0%,
+              18%,
+              22%,
+              25%,
+              53%,
+              57%,
+              100% {
+                box-shadow: 0 0 4px whitesmoke, 0 0 11px #8c52ff,
+                  0 0 19px whitesmoke, 0 0 40px #38b6ff, 0 0 80px #8c52ff,
+                  0 0 90px #38b6ff, 0 0 100px #8c52ff, 0 0 150px #38b6ff;
+              }
+    
+              20%,
+              24%,
+              55% {
+                box-shadow: none;
+              }
+            }
           }
           a {
             color: whitesmoke;
