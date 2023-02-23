@@ -12,6 +12,22 @@
     .text {
       background-color: #554671;
       border-radius: 10px 0 10px 10px;
+      .dataNbtn {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .btnDelete {
+          border: none;
+          text-align: end;
+          font-size: 1rem;
+          background-color: transparent;
+          color: rgb(179, 179, 179);
+          cursor: pointer;
+          &:hover {
+            filter: drop-shadow(1px 1px 10px rgb(152, 5, 5));
+          }
+        }
+      }
     }
   }
   &.otherUser {
@@ -36,6 +52,7 @@
     max-width: 70%;
     background: #1f2029;
     padding: 8px 15px;
+
     h3 {
       font-size: 0.9rem;
       color: whitesmoke;
