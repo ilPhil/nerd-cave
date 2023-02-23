@@ -54,7 +54,12 @@ const MessagesList = ({ dbname, privateChat }) => {
     <div className={styles.MessagesList}>
       <div className={styles.messages} ref={messagesEl}>
         {messages.map((item, i) => (
-          <Message data={item} key={i} privateChat={privateChat} />
+          <Message
+            data={item}
+            privateChat={privateChat}
+            dbname={dbname}
+            key={i}
+          />
         ))}
       </div>
       <MessageBar dbname={dbname} privateChat={privateChat} />
