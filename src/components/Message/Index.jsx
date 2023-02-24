@@ -5,6 +5,7 @@ import Image from "next/image";
 import { deleteDoc, doc } from "firebase/firestore";
 import { BsTrash } from "react-icons/bs";
 import { AiOutlineDown } from "react-icons/ai";
+import { IoCheckmarkOutline, IoCheckmarkDone } from "react-icons/io5";
 
 const Message = ({ data, privateChat, dbname }) => {
   const [user] = useAuthState(auth);
@@ -38,7 +39,6 @@ const Message = ({ data, privateChat, dbname }) => {
                         </span>
                       </label>
                       <input type="checkbox" className={styles.check}></input>
-
                       <div className={styles.controlDelete}>
                         {
                           <button
@@ -49,11 +49,18 @@ const Message = ({ data, privateChat, dbname }) => {
                           </button>
                         }
                       </div>
+                      <div className={styles.timeNSeen}>
+                        <p className={styles.time}>
+                          {convertTimeStamp(data?.createdAt)}
+                        </p>
+                        {data?.seen ? (
+                          <IoCheckmarkDone className={styles.checkmarkDone} />
+                        ) : (
+                          <IoCheckmarkOutline className={styles.checkmarkNot} />
+                        )}
+                      </div>
                     </div>
                   )}
-                  <p className={styles.time}>
-                    {convertTimeStamp(data?.createdAt)}
-                  </p>
                 </div>
               </div>
             </div>
