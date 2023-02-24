@@ -10,12 +10,53 @@
     flex-direction: row-reverse;
     padding-right: 6px;
     .text {
+      span {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
       background-color: #554671;
       border-radius: 10px 0 10px 10px;
       .dataNbtn {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        .deleteWrapper {
+          position: relative;
+          padding: 0;
+          display: flex;
+          justify-content: flex-start;
+          .sectionArrow {
+            cursor: pointer;
+            display: block;
+            transform: rotate(-90deg);
+          }
+          .check {
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            height: 20px;
+            width: 20px;
+            cursor: pointer;
+            &:checked + {
+              .controlDelete {
+                height: 30px;
+                display: block;
+              }
+            }
+          }
+          .controlDelete {
+            clear: both;
+            width: 100%;
+            height: 0px;
+            display: none;
+            text-align: center;
+            transition: height 0.7s ease;
+            .btnDelete {
+              text-align: start;
+            }
+          }
+        }
         .btnDelete {
           border: none;
           text-align: end;
@@ -83,6 +124,53 @@
         font-size: 0.8rem;
         font-weight: 300;
         font-family: "Open Sans", sans-serif;
+      }
+    }
+    .deleteWrapper {
+      position: relative;
+      padding: 0;
+      display: flex;
+      justify-content: flex-start;
+      .sectionArrow {
+        cursor: pointer;
+        display: block;
+        transform: rotate(-90deg);
+      }
+      .check {
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+        &:checked + {
+          .controlDelete {
+            height: 30px;
+            display: block;
+          }
+        }
+      }
+      .controlDelete {
+        clear: both;
+        width: 100%;
+        height: 0px;
+        display: none;
+        text-align: center;
+        transition: height 0.7s ease;
+        .btnDelete {
+          text-align: start;
+        }
+      }
+    }
+    .btnDelete {
+      border: none;
+      text-align: end;
+      font-size: 1rem;
+      background-color: transparent;
+      color: rgb(179, 179, 179);
+      cursor: pointer;
+      &:hover {
+        filter: drop-shadow(1px 1px 10px rgb(152, 5, 5));
       }
     }
   }
