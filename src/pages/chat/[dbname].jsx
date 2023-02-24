@@ -53,9 +53,13 @@ export default function () {
                     <MessagesList dbname={node.node} privateChat={true} />
                   </>
                 ) : (
-                  <div>
-                    <h1>Inizia una nuova chat</h1>
-                    <SearchUser setNode={setNode} />
+                  <div className={styles.boxChat}>
+                    <div className={styles.newChat}>
+                      <h2>Inizia una nuova chat</h2>
+                      <div className={styles.searchBar}>
+                        <SearchUser setNode={setNode}/>
+                      </div>
+                    </div>
                   </div>
                 )
               ) : (
