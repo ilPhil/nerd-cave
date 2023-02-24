@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
 .Modal {
   form {
     display: flex;
@@ -10,7 +12,6 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.089);
       padding: 10px 5px 5px 10px;
       font-size: 1rem;
-      
 
       &:focus {
         outline: none;
@@ -43,6 +44,7 @@
       text-decoration: none;
       font-weight: 300;
       font-size: 1rem;
+      font-family: "Open Sans", sans-serif;
       &:hover {
         color: #38b6ff;
       }
@@ -52,12 +54,12 @@
 
 @media screen and (max-width: 767px) {
   .Modal {
-   form {
+    form {
       .searchInput {
         width: 80%;
       }
-   }
-  } 
+    }
+  }
   .utentList {
     a {
       font-size: 0.8rem;

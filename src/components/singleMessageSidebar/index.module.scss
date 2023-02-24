@@ -43,6 +43,8 @@
         }
       }
       p {
+        display: flex; //
+        gap: 6px; //
         font-family: "Open Sans", sans-serif;
         font-size: 0.9rem;
         font-weight: 300;
