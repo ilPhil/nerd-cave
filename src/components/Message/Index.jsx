@@ -4,6 +4,7 @@ import { auth, db } from "@/firebase";
 import Image from "next/image";
 import { deleteDoc, doc } from "firebase/firestore";
 import { BsTrash } from "react-icons/bs";
+import { AiOutlineDown } from "react-icons/ai";
 
 const Message = ({ data, privateChat, dbname }) => {
   const [user] = useAuthState(auth);
@@ -30,12 +31,25 @@ const Message = ({ data, privateChat, dbname }) => {
                 <p className={styles.contentMessage}>{data?.text}</p>
                 <div className={styles.dataNbtn}>
                   {user?.uid === data?.sender && (
-                    <button
-                      className={styles.btnDelete}
-                      onClick={() => deleteMessage()}
-                    >
-                      <BsTrash />
-                    </button>
+                    <div className={styles.deleteWrapper}>
+                      <label htmlFor="touch">
+                        <span className={styles.sectionArrow}>
+                          <AiOutlineDown className={styles.arrow} />
+                        </span>
+                      </label>
+                      <input type="checkbox" className={styles.check}></input>
+
+                      <div className={styles.controlDelete}>
+                        {
+                          <button
+                            className={styles.btnDelete}
+                            onClick={() => deleteMessage()}
+                          >
+                            <BsTrash />
+                          </button>
+                        }
+                      </div>
+                    </div>
                   )}
                   <p className={styles.time}>
                     {convertTimeStamp(data?.createdAt)}
@@ -64,18 +78,31 @@ const Message = ({ data, privateChat, dbname }) => {
             <div className={styles.text}>
               <span>
                 <h3>{user?.uid === data?.uid ? "Tu" : data?.name}</h3>
+                {user?.uid === data?.uid && (
+                  <div className={styles.deleteWrapper}>
+                    <label htmlFor="touch">
+                      <span className={styles.sectionArrow}>
+                        <AiOutlineDown className={styles.arrow} />
+                      </span>
+                    </label>
+                    <input type="checkbox" className={styles.check}></input>
+
+                    <div className={styles.controlDelete}>
+                      {
+                        <button
+                          className={styles.btnDelete}
+                          onClick={() => deleteMessage()}
+                        >
+                          <BsTrash />
+                        </button>
+                      }
+                    </div>
+                  </div>
+                )}
               </span>
               <div className={styles.paragraphAndTime}>
                 <p className={styles.contentMessage}>{data.text}</p>
                 <div className={styles.dataNbtn}>
-                  {user?.uid === data?.uid && (
-                    <button
-                      className={styles.btnDelete}
-                      onClick={() => deleteMessage()}
-                    >
-                      <BsTrash />
-                    </button>
-                  )}
                   <p className={styles.time}>
                     {convertTimeStamp(data?.createdAt)}
                   </p>
