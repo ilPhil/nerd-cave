@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+
 .main {
   height: 100vh;
   display: flex;
@@ -16,11 +19,67 @@
   background-color: #17181f;
 }
 
+.boxChat {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .newChat {
+    background: #1f2029;
+    color: whitesmoke;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 2% 0 2%;
+    width: 40%;
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0;
+      z-index: 1;
+      animation: flicker 1.5s infinite alternate;
+      @keyframes flicker {
+        0%,
+        18%,
+        22%,
+        25%,
+        53%,
+        57%,
+        100% {
+          text-shadow: 0 0 4px whitesmoke, 0 0 11px #8c52ff,
+            0 0 19px whitesmoke, 0 0 40px #38b6ff, 0 0 80px #8c52ff,
+            0 0 90px #38b6ff, 0 0 100px #8c52ff, 0 0 150px #38b6ff;
+        }
+  
+        20%,
+        24%,
+        55% {
+          text-shadow: none;
+        }
+      }
+    }
+    .searchBar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 5%;
+    }
+  }    
+}
+
+
 @media (max-width: 767px) {
   .leftSide {
     display: none;
   }
   .rightSide {
     width: 100%;
+  }
+  .boxChat {
+    .newChat {
+      width: 80%;
+    }
   }
 }

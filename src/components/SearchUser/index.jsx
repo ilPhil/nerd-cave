@@ -86,7 +86,7 @@ const SearchUser = ({ setNode }) => {
         ></input>
         <input type="submit" value="🔍" className={styles.search} />
       </form>
-      <div>
+      <div className={styles.utents}>
         {usersFiltered.map((userFiltered) => (
           <div className={styles.utentList}>
             <div className={styles.utentImg}>
