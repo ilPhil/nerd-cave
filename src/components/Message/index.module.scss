@@ -10,6 +10,8 @@
     flex-direction: row-reverse;
     padding-right: 6px;
     .text {
+      display: flex;
+      flex-direction: column;
       span {
         width: 100%;
         display: flex;
@@ -67,6 +69,14 @@
           &:hover {
             filter: drop-shadow(1px 1px 10px rgb(152, 5, 5));
           }
+        }
+      }
+      .timeNSeen {
+        display: flex;
+        gap: 4px;
+        align-items: flex-end;
+        .checkmarkDone {
+          color: #38b6ff;
         }
       }
     }
