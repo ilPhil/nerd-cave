@@ -29,25 +29,22 @@
           position: absolute;
           right: 4px;
           top: 2px;
-          // padding-top: 6px;
           display: flex;
           flex-direction: column;
           opacity: 0;
-          // justify-content: flex-start;
           transition: opacity 0.35s;
           background-color: #554671;
 
           .sectionArrow {
+            color: rgb(179, 179, 179);
+            font-size: 0.8rem;
             cursor: pointer;
             display: block;
-            // transform: rotate(-90deg);
             border-radius: 100%;
           }
           .check {
             position: absolute;
             opacity: 0;
-            // top: 2px;
-            // height: 20px;
             width: 20px;
             cursor: pointer;
             &:checked + {
@@ -58,7 +55,6 @@
             }
           }
           .controlDelete {
-            // border: 1px solid red;
             clear: both;
             width: 100%;
             height: 0px;
@@ -67,18 +63,15 @@
             transition: height 0.7s ease;
             .btnDelete {
               text-align: start;
-              font-size: 1rem;
+              font-size: 0.8rem;
             }
           }
-          // &:hover {
-          //   opacity: 1;
-          // }
         }
         .btnDelete {
           border: none;
           padding: 0;
           margin: 0;
-          font-size: 1rem;
+          font-size: 0.8rem;
           color: rgb(179, 179, 179);
           cursor: pointer;
           background-color: #554671;
@@ -121,7 +114,6 @@
     max-width: 70%;
     background: #1f2029;
     padding: 8px 15px;
-    cursor: pointer;
 
     h3 {
       font-size: 0.9rem;
@@ -164,6 +156,8 @@
       background-color: #554671;
 
       .sectionArrow {
+        color: rgb(179, 179, 179);
+        font-size: 0.8rem;
         cursor: pointer;
         display: block;
         border-radius: 100%;
@@ -189,14 +183,14 @@
         transition: height 0.7s ease;
         .btnDelete {
           text-align: start;
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
     }
     .btnDelete {
       border: none;
       text-align: end;
-      font-size: 1rem;
+      font-size: 0.8rem;
       background-color: transparent;
       color: rgb(179, 179, 179);
       cursor: pointer;

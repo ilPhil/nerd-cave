@@ -3,8 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "@/firebase";
 import Image from "next/image";
 import { deleteDoc, doc } from "firebase/firestore";
-import { BsTrash } from "react-icons/bs";
-import { AiOutlineDown } from "react-icons/ai";
+import { BsFillGearFill, BsFillTrashFill } from "react-icons/bs";
 import { IoCheckmarkOutline, IoCheckmarkDone } from "react-icons/io5";
 
 const Message = ({ data, privateChat, dbname }) => {
@@ -35,7 +34,7 @@ const Message = ({ data, privateChat, dbname }) => {
                     <div className={styles.deleteWrapper}>
                       <label htmlFor="touch">
                         <span className={styles.sectionArrow}>
-                          <AiOutlineDown className={styles.arrow} />
+                          <BsFillGearFill className={styles.arrow} />
                         </span>
                       </label>
                       <input type="checkbox" className={styles.check}></input>
@@ -45,7 +44,7 @@ const Message = ({ data, privateChat, dbname }) => {
                             className={styles.btnDelete}
                             onClick={() => deleteMessage()}
                           >
-                            <BsTrash />
+                            <BsFillTrashFill />
                           </button>
                         }
                       </div>
@@ -96,7 +95,7 @@ const Message = ({ data, privateChat, dbname }) => {
                   <div className={styles.deleteWrapper}>
                     <label htmlFor="touch">
                       <span className={styles.sectionArrow}>
-                        <AiOutlineDown className={styles.arrow} />
+                        <BsFillGearFill className={styles.arrow} />
                       </span>
                     </label>
                     <input type="checkbox" className={styles.check}></input>
@@ -107,7 +106,7 @@ const Message = ({ data, privateChat, dbname }) => {
                           className={styles.btnDelete}
                           onClick={() => deleteMessage()}
                         >
-                          <BsTrash />
+                          <BsFillTrashFill />
                         </button>
                       }
                     </div>
