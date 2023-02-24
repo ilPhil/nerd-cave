@@ -49,21 +49,24 @@ const Message = ({ data, privateChat, dbname }) => {
                           </button>
                         }
                       </div>
-                      <div className={styles.timeNSeen}>
-                        {/* <p className={styles.time}>
-                          {convertTimeStamp(data?.createdAt)}
-                        </p> */}
-                        {data?.seen ? (
-                          <IoCheckmarkDone className={styles.checkmarkDone} />
-                        ) : (
-                          <IoCheckmarkOutline className={styles.checkmarkNot} />
-                        )}
-                      </div>
                     </div>
                   )}
-                  <p className={styles.time}>
-                    {convertTimeStamp(data?.createdAt)}
-                  </p>
+                  <div className={styles.timeNSeen}>
+                    <p className={styles.time}>
+                      {convertTimeStamp(data?.createdAt)}
+                    </p>
+                    {user?.uid === data?.sender &&
+                      (data?.seen ? (
+                        <IoCheckmarkDone className={styles.checkmarkDone} />
+                      ) : (
+                        <IoCheckmarkOutline className={styles.checkmarkNot} />
+                      ))}
+                    {/* {data?.seen && user?.uid === data?.sender ? (
+                      <IoCheckmarkDone className={styles.checkmarkDone} />
+                    ) : (
+                      <IoCheckmarkOutline className={styles.checkmarkNot} />
+                    )} */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,7 +90,8 @@ const Message = ({ data, privateChat, dbname }) => {
             />
             <div className={styles.text}>
               <span>
-                <h3>{user?.uid === data?.uid ? "Tu" : data?.name}</h3>
+                {user?.uid != data?.uid && <h3>{data?.name}</h3>}
+                {/* <h3>{user?.uid === data?.uid ? "" : data?.name}</h3> */}
                 {user?.uid === data?.uid && (
                   <div className={styles.deleteWrapper}>
                     <label htmlFor="touch">

@@ -12,42 +12,53 @@
     .text {
       display: flex;
       flex-direction: column;
+      background-color: #554671;
+      border-radius: 10px 0 10px 10px;
+      position: relative;
+      cursor: pointer;
       span {
         width: 100%;
         display: flex;
-        justify-content: space-between;
       }
-      background-color: #554671;
-      border-radius: 10px 0 10px 10px;
       .dataNbtn {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         .deleteWrapper {
-          position: relative;
-          padding: 0;
+          // border: 1px solid red;
+          position: absolute;
+          right: 4px;
+          top: 2px;
+          // padding-top: 6px;
           display: flex;
-          justify-content: flex-start;
+          flex-direction: column;
+          opacity: 0;
+          // justify-content: flex-start;
+          transition: opacity 0.35s;
+          background-color: #554671;
+
           .sectionArrow {
             cursor: pointer;
             display: block;
-            transform: rotate(-90deg);
+            // transform: rotate(-90deg);
+            border-radius: 100%;
           }
           .check {
             position: absolute;
             opacity: 0;
-            top: 0;
-            height: 20px;
+            // top: 2px;
+            // height: 20px;
             width: 20px;
             cursor: pointer;
             &:checked + {
               .controlDelete {
-                height: 30px;
+                height: max-content;
                 display: block;
               }
             }
           }
           .controlDelete {
+            // border: 1px solid red;
             clear: both;
             width: 100%;
             height: 0px;
@@ -56,19 +67,21 @@
             transition: height 0.7s ease;
             .btnDelete {
               text-align: start;
+              font-size: 1rem;
             }
           }
+          // &:hover {
+          //   opacity: 1;
+          // }
         }
         .btnDelete {
           border: none;
-          text-align: end;
+          padding: 0;
+          margin: 0;
           font-size: 1rem;
-          background-color: transparent;
           color: rgb(179, 179, 179);
           cursor: pointer;
-          &:hover {
-            filter: drop-shadow(1px 1px 10px rgb(152, 5, 5));
-          }
+          background-color: #554671;
         }
       }
       .timeNSeen {
@@ -77,6 +90,11 @@
         align-items: flex-end;
         .checkmarkDone {
           color: #38b6ff;
+        }
+      }
+      &:hover {
+        .deleteWrapper {
+          opacity: 1;
         }
       }
     }
@@ -103,6 +121,7 @@
     max-width: 70%;
     background: #1f2029;
     padding: 8px 15px;
+    cursor: pointer;
 
     h3 {
       font-size: 0.9rem;
@@ -123,8 +142,6 @@
         font-size: 0.9rem;
         font-weight: 300;
         font-family: "Open Sans", sans-serif;
-        /* trim della riga del messaggio */
-        //white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         word-wrap: break-word;
@@ -137,25 +154,28 @@
       }
     }
     .deleteWrapper {
-      position: relative;
-      padding: 0;
+      position: absolute;
+      right: 4px;
+      top: 2px;
       display: flex;
-      justify-content: flex-start;
+      flex-direction: column;
+      opacity: 0;
+      transition: opacity 0.35s;
+      background-color: #554671;
+
       .sectionArrow {
         cursor: pointer;
         display: block;
-        transform: rotate(-90deg);
+        border-radius: 100%;
       }
       .check {
         position: absolute;
         opacity: 0;
-        top: 0;
-        height: 20px;
         width: 20px;
         cursor: pointer;
         &:checked + {
           .controlDelete {
-            height: 30px;
+            height: max-content;
             display: block;
           }
         }
@@ -169,6 +189,7 @@
         transition: height 0.7s ease;
         .btnDelete {
           text-align: start;
+          font-size: 1rem;
         }
       }
     }
