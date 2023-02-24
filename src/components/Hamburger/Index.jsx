@@ -34,11 +34,6 @@ const Hamburger = ({ setNode }) => {
                   </Link>
                 </li>
               ))}
-
-              <li className={style.privateChat} onClick={onHandleModal}>
-                <MdMessage />
-                Inizia una chat privata
-              </li>
             </ul>
           </div>
         )}

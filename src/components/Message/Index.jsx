@@ -50,9 +50,9 @@ const Message = ({ data, privateChat, dbname }) => {
                         }
                       </div>
                       <div className={styles.timeNSeen}>
-                        <p className={styles.time}>
+                        {/* <p className={styles.time}>
                           {convertTimeStamp(data?.createdAt)}
-                        </p>
+                        </p> */}
                         {data?.seen ? (
                           <IoCheckmarkDone className={styles.checkmarkDone} />
                         ) : (
@@ -61,6 +61,9 @@ const Message = ({ data, privateChat, dbname }) => {
                       </div>
                     </div>
                   )}
+                  <p className={styles.time}>
+                    {convertTimeStamp(data?.createdAt)}
+                  </p>
                 </div>
               </div>
             </div>

@@ -5,8 +5,9 @@ import Hamburger from "../Hamburger/Index";
 import { global_chats } from "@/utils/constants";
 import { useState } from "react";
 import Modal from "../Modal/Index";
+import MobileSidebarLastMessages from "../MobileSidebarLastMessages";
 
-const TitleBar = ({ title, photo, setNode }) => {
+const TitleBar = ({ title, photo, node, setNode }) => {
   const [isModalEnabled, setModalEnabled] = useState(false);
   const onHandleModal = () => setModalEnabled((prev) => !prev);
 
@@ -17,6 +18,7 @@ const TitleBar = ({ title, photo, setNode }) => {
       )}
       <div className={styles.TitleBar}>
         <span>
+          <MobileSidebarLastMessages setNode={setNode} node={node} />
           <Hamburger setNode={setNode} />
         </span>
         <div>

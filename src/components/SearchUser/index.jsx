@@ -80,7 +80,10 @@ const SearchUser = ({ setNode }) => {
   return (
     <div className={styles.Modal}>
       <form onSubmit={onSearchSubmit}>
-        <input className={styles.searchInput} onChange={(e) => setUserToSearch(e.target.value)}></input>
+        <input
+          className={styles.searchInput}
+          onChange={(e) => setUserToSearch(e.target.value)}
+        ></input>
         <input type="submit" value="🔍" className={styles.search} />
       </form>
       <div>
