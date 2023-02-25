@@ -53,10 +53,13 @@ export default function Home() {
                 <h2>Welcome to the</h2>
                 <h1>Nerd Cave</h1>
                 <div className={styles.paragraph}>
-                  <p>Incontra altri nerd con pochi click! <br/>
-                  Muoviti nella stanza, ruotala e clicca sulle icone <br/>
-                  relative ai tuoi interessi. Si aprirà un canale ad esso dedicato.<br/>
-                  E buon divertimento!</p>
+                  <p>
+                    Incontra altri nerd con pochi click! <br />
+                    Muoviti nella stanza, ruotala e clicca sulle icone <br />
+                    relative ai tuoi interessi. Vai alla chat globale e scopri{" "}
+                    <br /> i vari canali dedicati.
+                    <br />E buon divertimento!
+                  </p>
                 </div>
                 <div className={styles.containerBtn}>
                   <button className={styles.btn}>
