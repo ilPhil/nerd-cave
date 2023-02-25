@@ -1,11 +1,9 @@
 # A QUIET PLACE FOR NERDS
-<iframe src='https://my.spline.design/musicroom-15f0bfbbe006e63e2edc6d34438bc636/' frameborder='0' width='100%' height='100%'></iframe>
 "Una stanza tutta per sé" è ciò che Virginia Woolf auspicava per tutte le voci silenziate. In fondo cos'è una stanza? Uno spazio di esistenza, di poesia, di creazione, di tregua, di accoglienza. Noi nerd conosciamo bene quanto una stanza possa contenere il mondo intero, un mondo di creatività, libri, videogiochi, musica, cinema, anime... E se per una volta fossimo noi ad aprire la porta? Forse potremmo avere una stanza tutta per noi.
 
 <br />
 
 ## UN CANALE, UNA PASSIONE
-***
 Nerd Cave nasce come punto di ritrovo per appassionati di qualsiasi forma d'arte e d'intrattenimento,
 suddiviso in canali tematici, così da poter facilmente trovare persone con i tuoi stessi interessi.
 I canali funzionano come chat di gruppo, dove è possibile scambiare opinioni e informazioni riguardo il tema desiderato.
@@ -17,7 +15,6 @@ Registrarsi è semplicissimo grazie all'autenticazione tramite Google: ti basta 
 <br />
 
 ## TECNOLOGIE USATE
-***
 * Next.js
 * SASS
 * Firebase
@@ -26,7 +23,6 @@ Registrarsi è semplicissimo grazie all'autenticazione tramite Google: ti basta 
 <br />
 
 ## FEATURES
-***
 * Designed from zero
 * Performance oriented
 * Scalable and best practices
@@ -35,7 +31,6 @@ Registrarsi è semplicissimo grazie all'autenticazione tramite Google: ti basta 
 <br />
 
 ## I NOSTRI "NERD" MASTER
-***
 * [Elisa Azzolina (Phel)](https://github.com/ElisaAzzolina)
 * [Jennifer Di Sclafani (Jay)](https://github.com/jaysauro)
 * [Maria Claretta Ferlito (Klairammm)](https://github.com/Klairammm)
@@ -49,7 +44,6 @@ Registrarsi è semplicissimo grazie all'autenticazione tramite Google: ti basta 
 <br />
 
 ## COME AVVIARLO
-***
 Run the development server:
 
 ```bash
